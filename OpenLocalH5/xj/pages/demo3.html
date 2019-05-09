@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!--link:css-->
+    <!--script:src-->
+    <title>Document</title>
+</head>
+<body>
+
+<!--html:5或者!可以生成html5文档结构-->
+<!--link:css script:src-->
+<p>1.生成带类样式的标签</p>
+<!--p.info-->
+<!--div.red .red-->
+<p>2.生成带ID的标签</p>
+<!--h2#hed-->
+<!--#box div#box-->
+<p>a标签</p>
+<!--a:link-->
+<!--a:mail-->
+<p>4.根据标签之间的位置关系来生成标签</p>
+<!--生成同级、兄弟标签 h2.header2+p.info-->
+<h2 class="header2"></h2>
+<p class="info"></p>
+<!--后代标签，也叫下级标签-->
+<!--ul>li+li+li-->
+<!--生成当前标签的父级-->
+<!--h2>span^p.info-->
+<!--5.在创建标签时候，同时创建内部的文本-->
+<!--{}-->
+<!--a{申怀坤}-->
+<!--p[title="申怀坤"]-->
+<!--a[href="http://www.baidu.com"]{网站}-->
+<!--6.重复生成功能-->
+<!--*-->
+<!--ul>li*5-->
+快速生成一个有8个列表项的导航
+<!--ul.list>li.item*8>a[href="http://www.baidu.com"]{困难}-->
+<p>给标签自动添加编号或排序</p>
+<!--$ @-->
+<!--ul.list>li.item*8>a{导航$}-->
+<ul class="list">
+    <li class="item"><a href="">导航1</a></li>
+    <li class="item"><a href="">导航2</a></li>
+    <li class="item"><a href="">导航3</a></li>
+    <li class="item"><a href="">导航4</a></li>
+    <li class="item"><a href="">导航5</a></li>
+    <li class="item"><a href="">导航6</a></li>
+    <li class="item"><a href="">导航7</a></li>
+    <li class="item"><a href="">导航8</a></li>
+</ul>
+<!--ul.list>li.item*8>a{导航$$}-->
+<ul class="list">
+    <li class="item"><a href="">导航01</a></li>
+    <li class="item"><a href="">导航02</a></li>
+    <li class="item"><a href="">导航03</a></li>
+    <li class="item"><a href="">导航04</a></li>
+    <li class="item"><a href="">导航05</a></li>
+    <li class="item"><a href="">导航06</a></li>
+    <li class="item"><a href="">导航07</a></li>
+    <li class="item"><a href="">导航08</a></li>
+</ul>
+<!--ul.list>li.item*8>a{导航$$@8-}-->
+<ul class="list">
+    <li class="item"><a href="">导航08-</a></li>
+    <li class="item"><a href="">导航09-</a></li>
+    <li class="item"><a href="">导航10-</a></li>
+    <li class="item"><a href="">导航11-</a></li>
+    <li class="item"><a href="">导航12-</a></li>
+    <li class="item"><a href="">导航13-</a></li>
+    <li class="item"><a href="">导航14-</a></li>
+    <li class="item"><a href="">导航15-</a></li>
+</ul>
+<!--ul.list>li.item*8>a{导航$$@100}-->
+<ul class="list">
+    <li class="item"><a href="">导航100</a></li>
+    <li class="item"><a href="">导航101</a></li>
+    <li class="item"><a href="">导航102</a></li>
+    <li class="item"><a href="">导航103</a></li>
+    <li class="item"><a href="">导航104</a></li>
+    <li class="item"><a href="">导航105</a></li>
+    <li class="item"><a href="">导航106</a></li>
+    <li class="item"><a href="">导航107</a></li>
+</ul>
+
+
+</body>
+</html>

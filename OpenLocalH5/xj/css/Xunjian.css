@@ -1,0 +1,75 @@
+body html{
+	*margin: 0px;
+	*padding: 0px;
+	background: white;
+}
+
+.topInfo{
+	background: #E7E7E7;
+	height: 30px;
+	width: 100%;
+	line-height: 30px;
+}
+.topInfo span{
+	font-size: 13px;
+	color: #8E8E8E;
+	padding-left: 5px;
+}
+
+.list{
+	width: 100%;
+	height: 40px;
+	line-height: 40px;
+	border-bottom: #E2E2E2 1px solid;
+}
+
+.list .nameTitle{
+	/* display: flex; */
+	padding-left: 5px;
+	color: black;
+	font-size: 14px;
+/* 	width: 100px;
+	background: blue; */
+}
+.list .info{
+	padding-left: 70px;
+	color: #898989;
+	font-size: 14px;
+}
+
+.content .nameTitle{
+	line-height: 40px;
+	padding-left: 5px;
+	color: black;
+	font-size: 14px;
+}
+.content .xunjianneirong{
+	padding-left: 5px;
+	padding-top: 5px;
+	color: black;
+	font-size: 13px;
+	text-align: left;
+}
+
+.upload-box .nameTitle{
+	line-height: 40px;
+	padding-left: 5px;
+	color: black;
+	font-size: 14px;
+}
+.upload-box .upload-btn{
+	display: block; /* 此元素将显示为块级元素此元素前后会带有换行符 */
+	/* display: inline; 此元素会被显示为内联元素元素前后没有换行符 */
+	width: 60px;
+	height: 60px;
+	background: #f7f7f7;
+	box-sizing: border-box;
+	border: 1px solid #d9d9d9;
+}
+.upload-box .upload-btn #showIt{
+	width: 100%;
+	height: 100%;
+	display: block;
+/* 	margin: auto; */
+/* 	vertical-align: middle; */
+}

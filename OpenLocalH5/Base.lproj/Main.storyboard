@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZFG-pb-qrA">
+                                <rect key="frame" x="14" y="144" width="386" height="44"/>
+                                <color key="backgroundColor" red="0.87843137250000003" green="0.87843137250000003" blue="0.87843137250000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="DdH-Eb-t6n"/>
+                                </constraints>
+                                <state key="normal" title="第一集打开H5"/>
+                                <connections>
+                                    <action selector="doOpen1H5:" destination="BYZ-38-t0r" eventType="touchUpInside" id="uqh-d4-7Jv"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FSe-q7-08c">
+                                <rect key="frame" x="14" y="213" width="386" height="44"/>
+                                <color key="backgroundColor" red="0.87843137250000003" green="0.87843137250000003" blue="0.87843137250000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" title="第二集打开H5"/>
+                                <connections>
+                                    <action selector="doOpen2H5:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Sfa-qq-Ad3"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NLR-J9-OtC">
+                                <rect key="frame" x="14" y="282" width="386" height="44"/>
+                                <color key="backgroundColor" red="0.87843137250000003" green="0.87843137250000003" blue="0.87843137250000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" title="第三集打开H5"/>
+                                <connections>
+                                    <action selector="doOpen3H5:" destination="BYZ-38-t0r" eventType="touchUpInside" id="wJZ-Et-bfQ"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oej-YS-eoP">
+                                <rect key="frame" x="14" y="351" width="386" height="44"/>
+                                <color key="backgroundColor" red="0.87843137250000003" green="0.87843137250000003" blue="0.87843137250000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" title="第四集打开H5"/>
+                                <connections>
+                                    <action selector="doOpen4H5:" destination="BYZ-38-t0r" eventType="touchUpInside" id="DYG-ne-TK7"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="s1A-Zt-z64">
+                                <rect key="frame" x="14" y="420" width="386" height="44"/>
+                                <color key="backgroundColor" red="0.87843137250000003" green="0.87843137250000003" blue="0.87843137250000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" title="第五集打开H5"/>
+                                <connections>
+                                    <action selector="doOpen5H5:" destination="BYZ-38-t0r" eventType="touchUpInside" id="xnh-co-rhX"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Oo4-Yw-nxt">
+                                <rect key="frame" x="14" y="489" width="386" height="44"/>
+                                <color key="backgroundColor" red="0.87843137250000003" green="0.87843137250000003" blue="0.87843137250000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" title="第六集打开H5"/>
+                                <connections>
+                                    <action selector="doOpen6H5:" destination="BYZ-38-t0r" eventType="touchUpInside" id="t7F-xN-YDd"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="oej-YS-eoP" firstAttribute="width" secondItem="NLR-J9-OtC" secondAttribute="width" id="4BA-om-MWW"/>
+                            <constraint firstItem="oej-YS-eoP" firstAttribute="height" secondItem="NLR-J9-OtC" secondAttribute="height" id="55s-L6-4cf"/>
+                            <constraint firstItem="ZFG-pb-qrA" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="350:375" id="5YH-Ze-Rrk"/>
+                            <constraint firstItem="Oo4-Yw-nxt" firstAttribute="height" secondItem="s1A-Zt-z64" secondAttribute="height" id="6kS-zp-Yc0"/>
+                            <constraint firstItem="NLR-J9-OtC" firstAttribute="top" secondItem="FSe-q7-08c" secondAttribute="bottom" constant="25" id="6yz-ch-oqM"/>
+                            <constraint firstItem="ZFG-pb-qrA" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="BUY-sB-Hgh"/>
+                            <constraint firstItem="s1A-Zt-z64" firstAttribute="width" secondItem="oej-YS-eoP" secondAttribute="width" id="COE-gJ-kqL"/>
+                            <constraint firstItem="NLR-J9-OtC" firstAttribute="width" secondItem="FSe-q7-08c" secondAttribute="width" id="COi-h9-xEi"/>
+                            <constraint firstItem="Oo4-Yw-nxt" firstAttribute="top" secondItem="s1A-Zt-z64" secondAttribute="bottom" constant="25" id="EYo-0r-dS1"/>
+                            <constraint firstItem="Oo4-Yw-nxt" firstAttribute="width" secondItem="s1A-Zt-z64" secondAttribute="width" id="G7C-qE-R3b"/>
+                            <constraint firstItem="FSe-q7-08c" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="PCC-RR-CSa"/>
+                            <constraint firstItem="ZFG-pb-qrA" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="100" id="PIR-ai-BV9"/>
+                            <constraint firstItem="FSe-q7-08c" firstAttribute="width" secondItem="ZFG-pb-qrA" secondAttribute="width" id="Tji-qT-1w1"/>
+                            <constraint firstItem="FSe-q7-08c" firstAttribute="top" secondItem="ZFG-pb-qrA" secondAttribute="bottom" constant="25" id="ULI-Os-rup"/>
+                            <constraint firstItem="FSe-q7-08c" firstAttribute="height" secondItem="ZFG-pb-qrA" secondAttribute="height" id="XA5-eI-Axo"/>
+                            <constraint firstItem="NLR-J9-OtC" firstAttribute="height" secondItem="FSe-q7-08c" secondAttribute="height" id="aFQ-9K-Vn0"/>
+                            <constraint firstItem="Oo4-Yw-nxt" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="cab-wy-xK4"/>
+                            <constraint firstItem="oej-YS-eoP" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="dXA-cG-SUy"/>
+                            <constraint firstItem="s1A-Zt-z64" firstAttribute="top" secondItem="oej-YS-eoP" secondAttribute="bottom" constant="25" id="ghi-lU-A08"/>
+                            <constraint firstItem="s1A-Zt-z64" firstAttribute="height" secondItem="oej-YS-eoP" secondAttribute="height" id="jli-I7-hKm"/>
+                            <constraint firstItem="NLR-J9-OtC" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="kSb-XE-2Lu"/>
+                            <constraint firstItem="s1A-Zt-z64" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="vqc-Zl-qsf"/>
+                            <constraint firstItem="oej-YS-eoP" firstAttribute="top" secondItem="NLR-J9-OtC" secondAttribute="bottom" constant="25" id="w4H-me-a30"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+        </scene>
+    </scenes>
+</document>

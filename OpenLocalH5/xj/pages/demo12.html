@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width,height=device-height,inital-scale=1.0,maximum-scale=1.0,user-scalable=no;">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no">
+
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="../js/jq.js"></script>
+    <title>登录</title>
+    <link rel="stylesheet" href="../css/demo12.css" type="text/css">
+
+    <script>
+        $(document).ready(function () {
+            $(".button").click(function () {
+                console.log("登录");
+                $.ajax({
+                    type: "POST",
+                    url:"http://10.46.30.135:8087/sim/mobile/login"
+                });
+            })
+            $(".forgetbtn").click(function () {
+                console.log("忘记密码");
+            })
+            $(".register").click(function () {
+                console.log("注册");
+            })
+
+            // // 1. 使用width() height()方法来设置div宽高
+            // $(".div1").width(divw).height(divh);
+            //
+            // // 2. 使用css的方式来设置宽高
+            // $(".div1").css({"width":divw+"px","height":divh+"px"});
+            //
+            // // 3. 使用函数链的方式写代码
+            // // 注：使用css设置单个样式时，参数为css("width",divw+"px") 逗号分割
+            // $(".div1").css("width",divw+"px").css("height",divh+"px");
+            //
+            // // 4. 使用不同函数的函数链
+            // $(".div1").css("width",divw+"px").height(divh);
+            //
+            // // 5.animate()动画 宽高一块改变
+            // $(".div1").animate({width:divw+"px",height:divh+"px"},4000);
+            //
+            // // 6.animate()动画 先改变宽，再改变高
+            // $(".div1").animate({width:divw+"px"},4000).animate({height:divh+"px"},4000);
+        })
+    </script>
+
+</head>
+<body>
+
+<div class="topTitle">
+    <p>集成应用</p>
+</div>
+<div class="content">
+    <div class="login-border">
+        <div class="image"><img src="../Images/8.png" alt="" class="accountImage"></div>
+        <input type="text" class="input" placeholder="请输入用户名">
+    </div>
+    <div class="pwd-border">
+        <div class="image"><img src="../Images/5.png" alt="" class="accountImage"></div>
+        <input type="password" placeholder="输入密码" class="input">
+    </div>
+    <div class="forgetpwd">
+        <button class="forgetbtn">忘记密码</button>
+        <button class="register">立即注册</button>
+    </div>
+    <div class="button">登录</div>
+</div>
+
+</body>
+</html>

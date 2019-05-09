@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>日常巡检</title>
+		<meta content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport" />
+		<script src="../js/jq.js"></script>
+		<link rel="stylesheet" type="text/css" href="../css/patrol.min.css" />
+	</head>
+	<body>
+		<div class="title-strip">
+			详细信息
+		</div>
+		<div>
+			<form action="">
+				<div class="contentL-strip-select">
+					<span>巡检人</span>
+					<select>
+						<option value=""></option>
+						<option value="">张三</option>
+						<option value="">李四</option>
+						<option value="">网二</option>
+					</select>
+				</div>
+				<div class="contentL-strip-select">
+					<span>巡检区域</span>
+					<select>
+						<option value="none"></option>
+						<option value="">区域A</option>
+						<option value="">区域B</option>
+						<option value="">区域C</option>
+					</select>
+				</div>
+				<div class="contentL-strip-input">
+					<span>巡检时间</span>
+					<input type="datetime-local" name="" id="" value="" />
+				</div>
+				<div class="contentL-strip-input">
+					<span>巡检标题</span>
+					<input type="text" placeholder="placeholder">
+				</div>
+				<div class="contentL-strip-input">
+					<span>巡检类型</span>
+					<input type="text"  placeholder="placeholder">
+				</div>
+				<div class="contentL-strip-input">
+					<span>公司</span>
+					<input type="text"  placeholder="placeholder">
+				</div>
+			</form>
+		</div>
+		<div class="patrol-content">
+			<span class="title-strip">巡检内容</span>
+			<textarea rows="" cols="" placeholder="placeholder">
+
+			</textarea>
+		</div>
+		<div class="upload-box">
+			<span class="title-strip">附件</span>
+			<a class="upload-btn" href="">
+				<img id="showIt" src="../img/upload.svg" alt="">
+				<input id="scInput" type="file" name="image" />
+			</a>
+		</div>
+		<a class="a-btn" href=""><span>正常</span></a>
+		<a class="a-btn-s" href=""><span>不正常</span></a>
+	</body>
+	<script type="text/javascript">
+		$("#scInput").on("change", function() {
+			print("hello");
+			var file = this.files[0];
+			if (this.files && file) {
+				var reader = new FileReader();
+				reader.onload = function(e) {
+					$("#showIt").attr("src", e.target.result);
+				}
+				reader.readAsDataURL(file);
+			}
+		});
+	</script>
+	</body>
+</html>

@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="../js/jq.js"></script>
+    <title>Document</title>
+    <script>
+        $(function () {
+            // $("li:eq(0)").css("background-color", "red")
+            // $("li:gt(6)").css("background-color", "red");
+            // $("li:lt(3)").css("background-color", "red")
+            // $("li:first").css("background-color", "red")
+            // $("li:last").css("background-color", "red")
+            // $("li:even").css("background-color", "red")
+            // $("li:odd").css("background-color", "red")
+            // $("li:nth-child(n)").css("background-color", "red")
+            // $("li:nth-child(2)").css("background-color", "red")
+            // $("li:nth-child(2n)").css("background-color", "red")
+            // $("li:nth-child(even)").css("background-color", "red")
+            // $("li:nth-child(2n+1)").css("background-color", "red")
+            // $("li:nth-child(odd)").css("background-color", "red")
+            $("li").click(function (i) {
+                console.log("shenhuaikun"+$(this).text());
+                alert($(this).attr("name"));
+            })
+        })
+    </script>
+</head>
+<body>
+<ul>
+    <li class="item" name="111">申怀坤01</li>
+    <li class="item" name="222">申怀坤02</li>
+    <li class="item" name="333">申怀坤03</li>
+    <li class="item" name="444">申怀坤04</li>
+    <li class="item" name="555">申怀坤05</li>
+    <li class="item" name="666">申怀坤06</li>
+    <li class="item" name="777">申怀坤07</li>
+    <li class="item" name="888">申怀坤08</li>
+</ul>
+<p class="info">我是</p>
+
+</body>
+</html>

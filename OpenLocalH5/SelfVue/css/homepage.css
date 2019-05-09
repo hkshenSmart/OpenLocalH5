@@ -1,0 +1,482 @@
+/*修改提示文字的颜色*/
+input::-webkit-input-placeholder {
+    color: #C2C2C2;
+    font-size: 15px;
+    /* placeholder位置  */
+    text-align: left;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+}
+html, body{
+    width: 100%;
+    height: 100%;
+}
+p{
+    margin: 0 0 0 0;
+}
+span{
+    margin: 0 0 0 0;
+}
+
+/*导航条*/
+.top_header{
+    width: 100%;
+    height: 64px;
+    /*position: fixed;*/
+    background: #3BC66F;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.left_header{
+    width: 20%;
+    /*background: red;*/
+
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+}
+.back_btn{
+    width: 13.8px;
+    height: 25px;
+    background-image: url("../images/normal/zuoda.png");
+    background-size: cover;
+    margin-left: 15px;
+    border: none;
+    background-color: transparent;
+}
+.middle_header{
+    width: 60%;
+    /*background: blue;*/
+
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+.top_title{
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+}
+.right_header{
+    width: 20%;
+    /*background: green;*/
+
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+.right_btn{
+    color: white;
+    font-size: 15px;
+    border: none;
+    background-color: transparent;
+}
+
+/*上下车地点*/
+.saAddressBox_div{
+    width: 100%;
+    height: 110px;
+    /*background: red;*/
+    /*overflow-y: auto;*/
+    /*-webkit-overflow-scrolling: touch;*/
+    border-bottom: 1px solid #EFEFEF;
+
+    display: flex;
+    flex-direction: row;
+}
+.leftsa_div{
+    width: 10%;
+    /*background: grey;*/
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.top_dot{
+    width: 10px;
+    height: 10px;
+    background: #2CBB54;
+    border-radius: 5px;
+}
+.middleimg_div{
+    width: 14px;
+    height: 14px;
+    background-image: url("../images/diaotou.png");
+    background-size: cover;
+
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+.bottom_dot{
+    width: 10px;
+    height: 10px;
+    background: #F78445;
+    border-radius: 5px;
+}
+
+
+.rightsa_div{
+    width: 90%;
+    /*background: purple;*/
+
+    display: flex;
+    flex-direction: column;
+}
+.rightsa_top_div{
+    flex: 1;
+    /*background: #10a0ea;*/
+    border-bottom: 1px solid #EFEFEF;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+#upCar_p{
+    font-size: 15px;
+}
+.rightsa_top_div img{
+    width: 22px;
+    height: 21px;
+}
+.rightsa_bottom_div{
+    flex: 1;
+    /*background: mediumspringgreen;*/
+
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+}
+#downCar_p{
+    font-size: 15px;
+    color: gray;
+}
+
+/*马上出发*/
+.gonowBox_div{
+    width: 100%;
+    height: 50px;
+    /*background: yellow;*/
+    border-bottom: 1px solid #EFEFEF;
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+.leftgonow_div{
+    width: 50%;
+    height: 40px;
+    /*background: darkmagenta;*/
+    border-right: 1px solid #EFEFEF;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+.lgnow_time_img{
+    width: 18px;
+    height: 16px;
+    margin-left: 15px;
+}
+#lgnow_input{
+    margin-left: -30px;
+    font-size: 15px;
+    width: 110px;
+    border: none;
+}
+.lgnow_jiantou_img{
+    width: 14px;
+    height: 18px;
+    margin-right: 20px;
+}
+
+.rightgonow_div{
+    width: 50%;
+    height: 40px;
+    /*background: green;*/
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+.xiaotx_img{
+    width: 22px;
+    height: 23px;
+    margin-left: 10px;
+}
+.jianjian_btn{
+    width: 22px;
+    height: 20px;
+    background-image: url("../images/jianjian.png");
+    background-size: cover;
+    margin-left: 5px;
+    border: none;
+}
+.num_input{
+    width: 30%;
+    height: 23px;
+    margin-left: 5px;
+    border: 1px solid #C7C7C7;
+    border-radius: 0;
+    font-size: 16px;
+}
+.jiajia_btn{
+    width: 23px;
+    height: 20px;
+    background-image: url("../images/jiajia.png");
+    background-size: cover;
+    margin-left: 5px;
+    border: none;
+}
+
+
+/*查询*/
+.searchBox_div{
+    width: 100%;
+    height: 70px;
+    /*background: red;*/
+    /*position: relative;*/
+
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+}
+.search_btn{
+    /*position: absolute;*/
+    /*top: 10px;*/
+    /*left: 15px;*/
+    /*right: 15px;*/
+    /*bottom: 10px;*/
+    width: 100%;
+    height: 50px;
+    margin-left: 15px;
+    margin-right: 15px;
+
+    border-radius: 5px;
+    background: #21CF93;
+    border: none;
+
+    color: white;
+    font-size: 18px;
+}
+
+/*选项*/
+.selectBox_div{
+    width: 100%;
+    height: 70px;
+    background: #F4F4F4;
+
+    display: flex;
+    flex-direction: row;
+    /*justify-content: row;*/
+    align-items: flex-end;
+}
+.left_select_div{
+    width: 50%;
+    height: 55px;
+    background: white;
+    border-right: 1px solid #ECECEC;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+.left_select_p{
+    color: #61C67D;
+    font-size: 16px;
+}
+.right_select_div{
+    width: 50%;
+    height: 55px;
+    background: white;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+.right_select_p{
+    color: #5B5B5B;
+    font-size: 16px;
+}
+
+/*班车列表*/
+.carList_div{
+    width: 100%;
+    background: #F4F4F4;
+    border: 1px solid #F4F4F4;
+
+    /*position: fixed;*/
+    /*top: 364px;*/
+    /*bottom: 0;*/
+
+    /*overflow: auto;*/
+    /*overflow-scrolling: auto;*/
+    /*-webkit-overflow-scrolling: auto;*/
+}
+.carList_div ul{
+    margin: 0;
+    padding: 0;
+    width: 100%;
+}
+.carList_div ul li{
+    /*position: relative;*/
+    width: 100%;
+    height: 120px;
+    /*border-bottom: solid 1px red;*/
+    /*border-bottom-left-radius: 50px;*/
+    /*border-bottom-width: 30px;*/
+    list-style: none;
+    margin-top: 10px;
+}
+.listBox_div{
+    width: 100%;
+    height: 100%;
+    /*border: solid 1px black;*/
+
+    display: flex;
+    flex-direction: row;
+}
+.left_listBox_div{
+    width: 10%;
+    /*background: #F4F4F4;*/
+
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+.left_listBox_div img{
+    width: 21px;
+    height: 18px;
+    margin-top: 10px;
+}
+
+.right_listBox_div{
+    width: 90%;
+    height: 100%;
+    background: white;
+    margin-right: 15px;
+
+    display: flex;
+    flex-direction: column;
+}
+.topcarBox_div{
+    height: 58%;
+    border-bottom: 1px solid #EFEFEF;
+}
+.direction_div{
+    width: 100%;
+    height: 50%;
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+.direction_p{
+    /*贵阳-猫场*/
+    font-size: 17px;
+    margin-left: 10px;
+}
+.directionInfo_p{
+    /*暂未发班*/
+    font-size: 14px;
+    color: #B1B1B1;
+    margin-left: 30px;
+}
+.locationBox_div{
+    width: 100%;
+    height: 50%;
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+.location_p{
+    /*车辆位置*/
+    font-size: 16px;
+    color: #EC9B75;
+    margin-left: 10px;
+}
+.lookMap_p{
+    /*请查看地图*/
+    font-size: 16px;
+    margin-left: 5px;
+}
+
+.bottomcarBox_div{
+    height: 42%;
+    /*background: black;*/
+
+    display: flex;
+    flex-direction: row;
+}
+.lookMapBox_div{
+    /*地图*/
+    flex: 1;
+    /*background: red;*/
+
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+.lookMapBox_div img{
+    width: 19px;
+    height: 16px;
+}
+.lookMapBox_div p{
+    font-size: 14px;
+    color: #B0B0B0;
+    margin-left: 3px;
+}
+.buyPiaoBox_div{
+    /*购票*/
+    flex: 1;
+    /*background: #10a0ea;*/
+
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+.buyPiaoBox_div img{
+    width: 17px;
+    height: 18px;
+}
+.buyPiaoBox_div p{
+    font-size: 14px;
+    color: #B0B0B0;
+    margin-left: 3px;
+}
+.callCarBox_div{
+    /*呼叫车辆*/
+    flex: 1;
+    /*background: red;*/
+
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+.callCarBox_div img{
+    width: 18px;
+    height: 15px;
+}
+.callCarBox_div p{
+    font-size: 14px;
+    color: #B0B0B0;
+    margin-left: 3px;
+}

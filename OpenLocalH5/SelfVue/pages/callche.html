@@ -1,0 +1,130 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>呼叫车辆</title>
+    <link rel="stylesheet" href="../css/WeUI/weui.css">
+    <link rel="stylesheet" href="../css/jQueryWeUI/jquery-weui.min.css">
+    <script src="../js/jQuery/jq.js"></script>
+    <!--AmazeUI-->
+    <script src="../js/AmazeUI/amazeui.js"></script>
+    <link rel="stylesheet" href="../css/AmazeUI/amazeui.css">
+    <!--本身-->
+    <link rel="stylesheet" href="../css/callche.css">
+    <script src="../js/callche.js"></script>
+    <style>
+    </style>
+    <script>
+    </script>
+</head>
+<body>
+<!--要在body中引入才起效-->
+<script src="../js/jQueryWeUI/jquery-weui.js"></script>
+<script src="../js/jQueryWeUI/swiper.min.js"></script>
+<script src="../js/jQueryWeUI/city-picker.min.js"></script>
+
+<header class="top_header">
+    <div class="left_header">
+        <button class="back_btn" type="button"></button>
+    </div>
+    <div class="middle_header">
+        <span class="top_title">呼叫车辆</span>
+    </div>
+    <div class="right_header">
+        <img src="../images/mapIcon.png" alt="">
+        <button class="right_btn" type="button">地图</button>
+    </div>
+</header>
+
+<div class="listBox_div">
+    <ul>
+        <!--<li>-->
+            <!--<div class="liContain_div">-->
+                <!--<div class="top_div">-->
+                    <!--<img src="../images/xiaoqiche.png" alt="">-->
+                    <!--<p class="catNum_p">贵A4276</p>-->
+                <!--</div>-->
+                <!--<div class="middle_div">-->
+                    <!--<img src="../images/linepoint.png" alt="">-->
+                    <!--<div class="qizhong_div">-->
+                        <!--<p class="qi_p">贵阳</p>-->
+                        <!--<p class="zhong_p">猫场</p>-->
+                    <!--</div>-->
+                <!--</div>-->
+                <!--<div class="bottom_div">-->
+                    <!--<div class="contactdriver_div">-->
+                        <!--<img src="../images/tel.png" alt="">-->
+                        <!--<p class="contactdriver_p">联系司机</p>-->
+                    <!--</div>-->
+                    <!--<div class="notidriver_div">-->
+                        <!--&lt;!&ndash;<a href="javascript:;" class="weui-btn weui-btn_primary open-popup" data-target="#half"></a>&ndash;&gt;-->
+                        <!--<img src="../images/tongzhi.png" alt="">-->
+                        <!--<p class="contactdriver_p">通知司机</p>-->
+                    <!--</div>-->
+                <!--</div>-->
+            <!--</div>-->
+        <!--</li>-->
+    </ul>
+</div>
+
+<div class="notialldriver">
+    <img src="../images/tongzhi.png" alt="">
+    <p class="notiall_p">通知所有司机</p>
+</div>
+
+
+<!--弹窗 需要a标签或jquery打开-->
+<div id="half" class="weui-popup__container popup-bottom">
+    <div class="weui-popup__overlay"></div>
+    <div class="weui-popup__modal" style="height: 350px; background: white">
+        <div class="topbar_div">
+            <a href="javascript:;" class="picker-button close-popup" style="margin-left: 15px; width: 10%; color: black; font-size: 23px">x</a>
+            <div class="topbar_title_div">
+                <p class="topbar_title_p">填写行程</p>
+            </div>
+        </div>
+        <!--上下车-->
+        <div class="saAddressBox_div">
+            <div class="leftsa_div">
+                <div class="top_dot"></div>
+                <div class="middleimg_div"></div>
+                <div class="bottom_dot"></div>
+            </div>
+            <div class="rightsa_div">
+                <div class="rightsa_top_div">
+                    <p id="upCar_p">上车点我的位置</p>
+                    <img src="../images/bianji.png" alt="">
+                </div>
+                <div class="rightsa_bottom_div">
+                    <p id="downCar_p">请输入下车点</p>
+                </div>
+            </div>
+        </div>
+        <!--马上出发-->
+        <div class="gonowBox_div">
+            <div class="leftgonow_div">
+                <img class="lgnow_time_img" src="../images/jilutime.png" alt="">
+                <p>马上出发</p>
+                <img class="lgnow_jiantou_img" src="../images/lvyoujiantou.png" alt="">
+            </div>
+            <div class="rightgonow_div">
+                <img class="xiaotx_img" src="../images/xiaotx.png" alt="">
+                <button class="jianjian_btn"></button>
+                <div class="numBox_div">
+                    <p class="num_input">1</p>
+                    <p class="num_unit">人</p>
+                </div>
+                <button class="jiajia_btn"></button>
+            </div>
+        </div>
+        <!--确定-->
+        <div class="searchBox_div">
+            <button class="search_btn" type="button">查询</button>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

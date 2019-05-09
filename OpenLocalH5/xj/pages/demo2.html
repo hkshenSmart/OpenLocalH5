@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"
+          name="viewport"/>
+    <!-- <script src="../js/jquery.js"></script> -->
+    <script src="../js/jq.js"></script>
+    <title></title>
+    <script>
+        $(function () {
+            // console.log("长度是"+$("li").length);
+            // console.log("选择符是"+$("li").selector);
+            // console.log("上下文属性"+$("li").context);
+            // console.log("版本号属性"+$("li").jquery);
+            // $("button").click(function () {
+            // 	// $("li").css("color", "blue");
+            // 	// each i索引 this当前正在处理的jquery对象
+            // 	$("li").each(function (i) {
+            // 		$(this).css("color", "green").html(i+"---"+"申怀坤");
+            // 	})
+            // });
+            //
+            // $("#id3").on("click", function () {
+            // 	console.log("111111");
+            // })
+
+            // console.log("宽度:"+cimg.getAttribute("width"));
+            // console.log("src:"+cimg.src);
+            // element.setAttribute('height', '100px');
+            // var sWidth = $(window).width();
+            var jsWidth = document.body.clientWidth;
+            var imgArray = document.getElementsByTagName("img");
+            for (var i = 0; i < imgArray.length; i++) {
+                console.log("---------------------------------------");
+                var cimg = imgArray[i];
+                var imgWidth = parseFloat(cimg.style["width"]);
+                var imgHeight = parseFloat(cimg.style["height"]);
+                if (imgWidth > 0 && imgHeight > 0) {
+                    if (imgWidth > jsWidth) {
+                        imgHeight = (jsWidth / imgWidth) * imgHeight;
+                        imgWidth = jsWidth;
+                    }
+                    cimg.style.width = imgWidth + "px";
+                    cimg.style.height = imgHeight + "px";
+                    console.log("改width:" + cimg.style.width);
+                    console.log("改height:" + cimg.style.height);
+
+                } else {
+                    var aWidth = cimg.getAttribute("width");
+                    var aHeight = cimg.getAttribute("height");
+                    if (aWidth > 0 && aHeight > 0) {
+                        if (aWidth > jsWidth) {
+                            aHeight = (jsWidth / aWidth) * aHeight;
+                            aWidth = jsWidth;
+                        }
+                        cimg.setAttribute("width", aWidth);
+                        cimg.setAttribute("height", aHeight);
+                    }
+                }
+                console.log("getAttribute 获取src:" + cimg.getAttribute("src"));
+                var originSrc = cimg.getAttribute("src");
+                var imgSrc = "http://www.qiannan.gov.cn/" + originSrc;
+                cimg.setAttribute("src", imgSrc);
+                // cimg.style.fontSize = 18;
+            }
+            var spanArray = document.getElementsByTagName("span");
+            var pArray = document.getElementsByTagName("p");
+            for (var j = 0; j < spanArray.length; j++) {
+                var cspan = spanArray[j];
+                cspan.style.fontSize = "16px";
+                cspan.style.color = "red";
+                // cspan.style.margin = 0;
+                // cspan.style.padding = 0;
+                // cspan.style.letterSpacing = 0;
+            }
+            for (var k = 0; k < pArray.length; k++) {
+                var cp = pArray[k];
+                cp.style.fontSize = "16px";
+                cp.style.color = "red";
+            }
+
+        });
+
+        function dosomething(data) {
+            console.log("hello a" + data);
+        }
+    </script>
+</head>
+<body>
+<!--<button type="button" name="button">点击变色</button>-->
+<!--<ul>-->
+<!--<li>111</li>-->
+<!--<li onclick="dosomething(10)">222</li>-->
+<!--<li id="li3">333</li>-->
+<!--<li>444</li>-->
+<!--<li>555</li>-->
+<!--<li>666</li>-->
+<!--<li>777</li>-->
+<!--</ul>-->
+
+<head>
+    <meta content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"
+          name="viewport"/>
+</head>
+<div class="view TRS_UEDITOR trs_paper_default trs_web"><p
+        style="padding: 0px;list-style: none;color: rgb(73, 73, 73);font-size: 14px;line-height: 24px;white-space: normal;font-family: Calibri;background-color: rgb(255, 255, 255)">
+    <span style="font-family: 仿宋; font-size: 21px;">&nbsp; &nbsp; 为扎实稳步抓好农村产权制度改革工作，普安镇在加强对工作调度与督办的同时，</span><span
+        style="font-family: 仿宋, 仿宋_GB2312;font-size: 21px;line-height: 33px;text-indent: 43px">“三举措”全力跟进，力争4月底完成清产核资和集体成员信息登记工作，为5月份的评议、公示等集体成员确定工作夯实基础。</span>
+</p>
+    <p style="padding: 0px;list-style: none;color: rgb(73, 73, 73);font-size: 14px;white-space: normal;line-height: 33px;text-indent: 43px;font-family: Calibri;background-color: rgb(255, 255, 255)">
+        <strong><span style="font-family: 黑体;font-size: 21px"><span
+                style="font-family:黑体">一是明确任务、层层压实。</span></span></strong><span
+            style="font-family: 仿宋, 仿宋_GB2312;font-size: 21px"><span style="font-family:仿宋">为更好更快的完成产权制度改革相关工作，普安镇在明确各级数据录入员录入任务的同时，抓好对各工作组开展清产核资和集体成员信息登记工作的指导，并要求各工作组必须严格按照数据录入员的要求按时保量完成相关工作。</span></span>
+    </p>
+    <p style="padding: 0px;list-style: none;color: rgb(73, 73, 73);font-size: 14px;white-space: normal;line-height: 33px;text-indent: 43px;font-family: Calibri;background-color: rgb(255, 255, 255)">
+        <strong><span style="font-family: 黑体;font-size: 21px"><span
+                style="font-family:黑体">二是强化指导、信息共享。</span></span></strong><span
+            style="font-family: 仿宋, 仿宋_GB2312;font-size: 21px"><span style="font-family:仿宋">为稳步推进清产核资等工作，镇集体产权制度改革办公室每天深入到村开展业务指导，对工作中产生的问题及时进行消化，并将其进行分类整理，及时通过工作群发布共享，以便共同推进工作。</span></span>
+    </p>
+    <p style="padding: 0px;list-style: none;color: rgb(73, 73, 73);font-size: 14px;white-space: normal;line-height: 33px;text-indent: 43px;font-family: Calibri;background-color: rgb(255, 255, 255)">
+        <strong><span style="font-family: 黑体;font-size: 21px"><span
+                style="font-family:黑体">三是边做边查、切实成效。</span></span></strong><span
+            style="font-family: 仿宋, 仿宋_GB2312;font-size: 21px"><span style="font-family:仿宋">在开展清产核资工作中，采取</span>“由难至易、前紧后松”的方式，对各组清查上报的数据进行抽查核实，对存在错报、漏报等事项及时进行调整补登，将查缺补漏工作提前抓好，确保工作取得成效。</span><span
+            style="line-height: 24px;">&nbsp;</span><span style="line-height: 24px; text-align: center;">&nbsp;</span>
+    </p>
+    <p style="padding: 0px;list-style: none;color: rgb(73, 73, 73);font-size: 14px;line-height: 24px;white-space: normal;text-align: center;font-family: Calibri;background-color: rgb(255, 255, 255)">
+        <img src="/webpic/W0201904/W020190404/W020190404335177112320.png" style="border: 0px;max-width: 785px"
+             OLDSRC="W020190404335177112320.png"/></p>
+    <div style="color: rgb(73, 73, 73);font-family: sans-serif, Verdana;font-size: 14px;line-height: 24px;white-space: normal;text-align: center;background-color: rgb(255, 255, 255)"></div>
+    <p style="padding: 0px;list-style: none;color: rgb(73, 73, 73);font-size: 14px;line-height: 24px;white-space: normal;text-align: center;font-family: Calibri;background-color: rgb(255, 255, 255)">
+        （图为：到阳基村开展业务指导）</p>
+    <p style="padding: 0px;list-style: none;color: rgb(73, 73, 73);font-size: 14px;line-height: 24px;white-space: normal;text-align: center;font-family: Calibri;background-color: rgb(255, 255, 255)">
+        <img src="/webpic/W0201904/W020190404/W020190404335179708988.png" style="border: 0px;max-width: 785px"
+             OLDSRC="W020190404335179708988.png"/></p>
+    <div style="color: rgb(73, 73, 73);font-family: sans-serif, Verdana;font-size: 14px;line-height: 24px;white-space: normal;text-align: center;background-color: rgb(255, 255, 255)"></div>
+    <p style="padding: 0px; list-style: none; color: rgb(73, 73, 73); font-size: 14px; line-height: 24px; white-space: normal; text-align: center; font-family: Calibri; background-color: rgb(255, 255, 255);">
+        （图为：到前进村开展业务指导）</p></div>
+
+</body>
+
+<!--Option+Command+l-->
+
+<script>
+    // function dosomething() {
+    // 	console.log("hello");
+    // }
+</script>
+</html>

@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="../js/jq.js"></script>
+    <script src="../js/jquery.form.js"></script>
+    <title>Document</title>
+
+    <script>
+        // jquery的扩展方法
+        $.fn.serializeObject = function()
+        {
+            var o = {};
+            var a = this.serializeArray();
+            $.each(a, function() {
+                if (o[this.name]) {
+                    if (!o[this.name].push) {
+                        o[this.name] = [o[this.name]];
+                    }
+                    o[this.name].push(this.value || '');
+                } else {
+                    o[this.name] = this.value || '';
+                }
+            });
+            return o;
+        };
+        $(document).ready(function () {
+            // $("#myForm").ajaxForm(function () {
+            //     $("#output1").html("提交成了").show();
+            // })
+            // $("#myForm").submit(function () {
+            //     $("#output1").html("提交成了").show();
+            // })
+            $(".btn").click(function () {
+                var JsonData = $('#myForm').serializeObject();
+                console.log(JsonData);
+                // alert(JSON.stringify(JsonData));
+
+                // ajax提交
+                $.ajax({
+                    type: "POST",
+                    url: "http://58.42.245.4:8089/qydl/tokens",
+                    // url: "http://1.207.107.8:8080/zhqnInterfaceServer/imUserInfo/imUserLoginInfo",
+                    contentType: "application/json; charset=utf-8",
+                    data: JSON.stringify(JsonData),
+                    dataType: "json",
+                    timeout: 10000, // 毫秒
+                    // beforeSend: function(xhr) {
+                    //     xhr.setRequestHeader("Access-Toke");
+                    // },
+                    // headers: {
+                    //     'procid': "1234567ioiewasdfg",
+                    //     'appcode': "app",
+                    //     'imei': "1234567",
+                    //     'timestamp': "1234567",
+                    //     'randomnum': "1234567",
+                    //     'ciphertext': "a2640450ca24c8c17d564a45ad90bbdf",
+                    //     'secretKey': "zhqn"
+                    // },
+                    success: function (data) {
+                        console.log("提交数据:"+data["retMessage"]);
+                        if (data > 0) {
+                            alert("成功提交了:"+data);
+                        }
+                    },
+                    error: function (data,type, err) {
+                        // console.log("提交数据失败:"+data.responseText );
+                        console.log("ajax错误类型："+type);
+                        console.log(err);
+                    },
+                    complete: function () {
+                        console.log("执行完毕");
+                    }
+                })
+            })
+        })
+    </script>
+</head>
+<body>
+
+<h3> Demo 1 : form插件的使用--ajaxForm(). </h3>
+<!--action="http://1.207.107.8:8080/zhqnInterfaceServer/imUserInfo/imUserLoginInfo"-->
+<!--http://58.42.245.4:8089/qydl/tokens-->
+<form id="myForm">
+    名称： <input type="text" name="username" /> <br/>
+    地址： <input type="password" name="password" /><br/>
+    <!--自我介绍： <textarea name="comment"></textarea> <br/>-->
+    <input type="submit" id="test" value="提交" /> <br/>
+    <div id="output1" style="display:none;"></div>
+</form>
+<button class="btn">点击下</button>
+
+</body>
+</html>

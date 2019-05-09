@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="../js/jq.js"></script>
+    <title>插入与替换</title>
+    <script>
+        $(document).ready(function () {
+            // $("#siteName").bind("click", function () {
+                // append()将新元素添加到当前的jQuery对象中
+                // $(this).append("(www.shenhuaikun.com)");
+                // after()将新元素添加到当前对象的后面
+                // $(this).after("<span style='color: red'>新加的元素</span>");
+                // prepend()
+                // $(this).prepend("<span style='color: blue'>之前</span>")
+                // before() 将新元素添加到当前元素的前面
+                // replaceWith()替换当前元素
+            // });
+            $(document.body).append('<div id="linklist">友情链接</div>');
+            $("a").clone().appendTo('#linklist');
+            $('#linklist > a').after('<br>');
+        })
+    </script>
+</head>
+<!--vue-->
+<script src="https://cdn.jsdelivr.net/npm/vue"></script>
+<body>
+
+<!--<h3 id="siteName">学习网站</h3>-->
+<!--<a href="">百度</a>-->
+<!--<a href="">新浪</a>-->
+<!--<a href="">京东</a>-->
+<!--<a href="">小米</a>-->
+<!--<a href="">苹果</a>-->
+
+<div id="app">
+    <my-component></my-component>
+</div>
+<template id="template_id">
+    <div class="content">
+        <h2>这是个componet</h2>
+        <slot>如果无分发内容，则显示slot的内容</slot>
+        <p>做些事情</p>
+    </div>
+</template>
+<srcipt>
+    <!--Vue.component('my-component', {-->
+    <!--template: '#'-->
+    <!--});-->
+    <!--new Vue({,-->
+    <!--el: '#app'-->
+    <!--})-->
+</srcipt>
+
+</body>
+</html>

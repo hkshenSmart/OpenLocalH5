@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!--<meta http-equiv="Access-Control-Allow-Origin" content="*" />-->
+    <title>地图选点</title>
+    <link rel="stylesheet" href="../css/WeUI/weui.css">
+    <link rel="stylesheet" href="../css/jQueryWeUI/jquery-weui.min.css">
+    <script src="../js/jQuery/jq.js"></script>
+    <!--AmazeUI-->
+    <script src="../js/AmazeUI/amazeui.js"></script>
+    <link rel="stylesheet" href="../css/AmazeUI/amazeui.css">
+    <!--高德地图-->
+    <link rel="stylesheet" href="https://a.amap.com/jsapi_demos/static/demo-center/css/demo-center.css" />
+    <script src="https://webapi.amap.com/maps?v=1.4.13&key=4777b6221424cd867ba8dbb0997b4767"></script>
+    <!--本身-->
+    <link rel="stylesheet" href="../css/choosepoint.css">
+    <script src="../js/choosepoint.js"></script>
+    <style>
+    </style>
+    <script>
+    </script>
+</head>
+<!--vue-->
+<script src="https://cdn.jsdelivr.net/npm/vue"></script>
+<body>
+<!--要在body中引入才起效-->
+<script src="../js/jQueryWeUI/jquery-weui.js"></script>
+<script src="../js/jQueryWeUI/swiper.min.js"></script>
+<script src="../js/jQueryWeUI/city-picker.min.js"></script>
+
+<header class="top_header">
+    <div class="left_header">
+        <button class="back_btn" type="button"></button>
+    </div>
+    <div class="middle_header">
+        <span class="top_title">地图选点</span>
+    </div>
+    <div class="right_header">
+        <img src="../images/mapIcon.png" alt="">
+        <button class="right_btn" type="button">xxx</button>
+    </div>
+</header>
+
+<div id="map_div"></div>
+<div class="listBox_div" id="listContent_div">
+    <ul>
+        <li v-for="(oneAddressPointModel, index) in AddressPointModel">
+            <div class="li_content_div" v-on:click="selectli(index)">
+                <p class="top_name_p">{{oneAddressPointModel.name}}</p>
+                <p class="bottom_info_p">{{oneAddressPointModel.info}}</p>
+            </div>
+        </li>
+    </ul>
+</div>
+
+</body>
+</html>

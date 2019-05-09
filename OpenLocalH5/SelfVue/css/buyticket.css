@@ -1,0 +1,137 @@
+/*修改提示文字的颜色*/
+input::-webkit-input-placeholder {
+    color: #C2C2C2;
+    font-size: 15px;
+    /* placeholder位置  */
+    text-align: left;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+}
+html, body{
+    width: 100%;
+    height: 100%;
+}
+p{
+    margin: 0 0 0 0;
+}
+span{
+    margin: 0 0 0 0;
+}
+
+/*导航条*/
+.top_header{
+    width: 100%;
+    height: 64px;
+    /*position: fixed;*/
+    background: white;
+    border: 1px solid #eeeeee;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.left_header{
+    width: 20%;
+    /*background: red;*/
+
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+}
+.back_btn{
+    width: 13.8px;
+    height: 25px;
+    background-image: url("../images/normal/zuoda.png");
+    background-size: cover;
+    margin-left: 15px;
+    border: none;
+    background-color: transparent;
+}
+.middle_header{
+    width: 60%;
+    /*background: blue;*/
+
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+.top_title{
+    color: #414141;
+    font-size: 18px;
+    font-weight: bold;
+}
+.right_header{
+    width: 20%;
+    /*background: green;*/
+    opacity: 0;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+.right_header img{
+    width: 23px;
+    height: 20px;
+}
+.right_btn{
+    color: #414141;
+    font-size: 15px;
+    border: none;
+    background-color: transparent;
+}
+
+/*日期选择*/
+.topdateBox_div{
+    width: 100%;
+    height: 60px;
+    /*background: grey;*/
+    border-bottom: 1px solid #F6F6F6;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+.predate_btn{
+    width: 25%;
+    height: 30px;
+    font-size: 18px;
+    color: #77788C;
+
+    border: none;
+}
+.showdateBox_div{
+    width: 50%;
+    height: 40px;
+    background: #DBF1C8;
+    border-radius: 5px;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+}
+.showdateBox_div img{
+    width: 22px;
+    height: 21px;
+    /*margin-right: 5px;*/
+}
+.week_p{
+    font-size: 16px;
+    color: #77788C;
+    /*margin-right: 5px;*/
+}
+.nextdate_btn{
+    width: 25%;
+    height: 30px;
+    font-size: 18px;
+    color: #77788C;
+
+    border: none;
+}

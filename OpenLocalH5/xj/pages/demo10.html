@@ -1,0 +1,243 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="../js/jq.js"></script>
+    <title>第一次写没适配</title>
+
+    <script>
+        $(function () {
+            // $("button").click(function () {
+            //     $.ajax({
+            //         type:"GET",
+            //         url:"http://www.baidu.com",
+            //         data:null,
+            //         header:"Access-Control-Allow-Origin: *",
+            //         dataType:"json",
+            //         success: function (data) {
+            //             $('#name').text(data.name);
+            //         }
+            //     })
+            // });
+            // jQuery.load(url,{},function(){})
+            // $.get("http://www.baidu.com", {'Access-Control-Allow-Origin': '*'}, function (data) {
+            //     $('div').html(data);
+            // });
+            // getJson json数据
+            // post()
+
+            // $("#name").change(function (event) {
+            //     $.post(
+            //         "",
+            //         {"name":$(this).val()},
+            //         function (data) {
+            //             $("name").next().empty();
+            //             $("name").after(data);
+            //         }
+            //     )
+            // })
+            $("#btn2").click(function () {
+                $.ajax({
+                    type:"GET",
+                    url:"json.json",
+                    data:null,
+                    dataType:"json",
+                    success:function (data) {
+                        console.log("------:"+data);
+                        $("#showName").text(data.name);
+                        var links = data.links;
+                        var html = '';
+                        for (var i = 0; i < links.length; i++) {
+                            // html += "<li>" "<div class='liDiv'>"
+                            //     "<p id='top'>"顶部"</p>"
+                            //     "<p id='bottom'>"底部"</p>"
+                            //     "<p id='right'>"2019-03-12"</p>"
+                            //     "</div>"
+                            var name = links[i].name;
+                            var url = links[i].url;
+                            var time = "2019-01-23 23:11:13";
+                            // $("#list").append("<li>\n" +
+                            //     "            <div class=\"liDiv\">\n" +
+                            //     "                <p id=\"top\">name</p>\n" +
+                            //     "                <p id=\"bottom\">底部</p>\n" +
+                            //     "                <p id=\"right\">2019-03-12</p>\n" +
+                            //     "                <div style=\"clear: both\"></div>\n" +
+                            //     "            </div>\n" +
+                            //     "        </li>")
+                            $("#list").append(function () {
+
+                                // return "<li>\n" +
+                                //     "            <img src=\"../Images/9.png\">\n" +
+                                //     "            <div class=\"liDiv\">\n" +
+                                //     "                <p id=\"top\">名字:"+name+"</p>\n" +
+                                //     "                <p id=\"bottom\">地址:"+url+"</p>\n" +
+                                //     "                <p id=\"right\">时间:"+time+"</p>\n" +
+                                //     "                <div style=\"clear: both\"></div>\n" +
+                                //     "            </div>\n" +
+                                //     "        </li>";
+                                //return html1;
+                                return "<li class=\"tap_list\">\n" +
+                                    "            <div id=\"img_box\">\n" +
+                                    "                <img src=\"../Images/9.png\" alt=\"\">\n" +
+                                    "            </div>\n" +
+                                    "            <div class=\"liDiv\">\n" +
+                                    "                <p id=\"top\">名字:"+name+"</p>\n" +
+                                    "                <p id=\"bottom\">地址:"+url+"</p>\n" +
+                                    "                <p id=\"right\">时间:"+time+"</p>\n" +
+                                    "            </div>\n" +
+                                    "        </li>"
+                            })
+                        }
+                    }
+                })
+            });
+
+            // $("li").click(function (index) {
+            //     console.log("+index:"+index);
+            // })
+            // li列表添加点击事件
+            $('ul').on('click','li',function () {
+                console.log($(this).index());
+            });
+
+            // function porpertyList(list) {
+            //     var card = "";
+            //     $.each(list, function (index, item) {
+            //         var cardNo = item.cardNo;
+            //         cardNo = cardNo.substring(cardNo.length - 4);
+            //         card += '<li><div class="left">‘等待’ + "(" + cardNo + ")" + '<br /><span id="balance">' + item.limitMsg + '</span></div>' +
+            //         '<div class="right"><img class="g1" src="../img/images/trade_present@2x.png"">' +
+            //         '<img class="g2" src="../img/images/trade_none_present@2x.png"></div></li>';
+            //     });
+            //     $('.list').html(card);
+            // };
+        });
+    </script>
+    <!--<script>-->
+        <!--window.onload =-->
+        <!--var oli = document.getElementsByTagName("li");-->
+        <!--for(var i = 0; i < oli.length; i++) {(function(j){-->
+            <!--oli[j].onclick = function () {-->
+                <!--alert(j);-->
+            <!--};-->
+        <!--})(i)-->
+    <!--</script>-->
+
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        #list_div {
+            width: 100%;
+        }
+        #list_div ul{
+
+        }
+        #list_div ul li{
+            position: relative;
+            width: 100%;
+            height: 100px;
+            border: solid 1px red;
+            /*border-bottom: solid 1px red;*/
+            /*border-bottom-left-radius: 50px;*/
+            /*border-bottom-width: 30px;*/
+            list-style: none;
+            margin-top: 10px;
+        }
+        #img_box{
+            position: relative;
+            width: 10%;
+            height: 100%;
+            background: gray;
+        }
+        img{
+            width: 20px;
+            height: 20px;
+            /*display: block;*/
+            /*margin: 0 auto;*/
+            position: absolute;
+            left: 40px;
+            top: 40px;
+            /*line-height: 50px;*/
+            /*vertical-align: middle;*/
+        }
+        .liDiv{
+            position: absolute;
+            width: 80%;
+            height: 100%;
+            left: 130px;
+            top: 0;
+            border: solid 1px blue;
+        }
+        .liDiv #top{
+            /*float: top;*/
+            /*float: right;*/
+            /*position: absolute;*/
+            /*left: 50px;*/
+            /*top: 50px;*/
+            width: 200px;
+            height: 40px;
+            line-height: 40px;
+            /*background: blue;*/
+        }
+        .liDiv #bottom{
+            /*float: bottom;*/
+            position: absolute;
+            bottom: 0;
+            width: 270px;
+            height: 40px;
+            line-height: 40px;
+            /*background: green;*/
+        }
+        .liDiv #right{
+            position: absolute;
+            right: 0;
+            bottom: 0;
+            width: 420px;
+            height: 50px;
+            line-height: 50px;
+            background: #446ab5;
+            text-align: center;
+        }
+        p{
+            margin-left: 10px;
+        }
+    </style>
+
+</head>
+<body>
+<button type="button" name="button" id="btn1">获取信息</button>
+<button type="button" name="button" id="btn2">获取本地信息list</button>
+<div>
+    <span id="showName"></span>
+</div>
+<p>---------------------------------</p>
+<p>这是一个列表</p>
+<div id="list_div">
+    <ul id="list">
+        <li class="tap_list">
+            <div id="img_box">
+                <img src="../Images/9.png" alt="">
+            </div>
+            <div class="liDiv">
+                <p id="top">顶部</p>
+                <p id="bottom">底部</p>
+                <p id="right">2019-03-12</p>
+            </div>
+        </li>
+    </ul>
+</div>
+
+<br>
+<!--<h3>用户登录</h3>-->
+<!--<form action="">-->
+    <!--用户名称：<input type="text" name="name" id="name"><br>-->
+    <!--用户密码：<input type="password" name="pwd" id="pwd"><br>-->
+    <!--<button type="button" name="submit" id="submit">登录</button>-->
+<!--</form>-->
+
+</body>
+</html>

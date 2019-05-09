@@ -1,0 +1,368 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>附近网点</title>
+    <link rel="stylesheet" href="../css/weui.css">
+    <link rel="stylesheet" href="../css/jquery-weui.min.css">
+    <!--<link rel="stylesheet" href="https://cdn.bootcss.com/weui/1.1.3/style/weui.min.css">-->
+    <!--<link rel="stylesheet" href="https://cdn.bootcss.com/jquery-weui/1.2.1/css/jquery-weui.min.css">-->
+    <script src="../js/jq.js"></script>
+
+    <script src="../js/AmazeUI/amazeui.js"></script>
+    <link rel="stylesheet" href="../css/AmazeUI/amazeui.css">
+    <!--<link rel="stylesheet" href="http://cdn.amazeui.org/amazeui/2.7.2/js/amazeui.min.js">-->
+    <!--<link rel="stylesheet" href="http://cdn.amazeui.org/amazeui/2.7.2/js/amazeui.js">-->
+    <!--<link rel="stylesheet" href="http://cdn.amazeui.org/amazeui/2.7.2/css/amazeui.min.css">-->
+    <!--<link rel="stylesheet" href="http://cdn.amazeui.org/amazeui/2.7.2/css/amazeui.css">-->
+
+    <style>
+        /*修改提示文字的颜色*/
+        input::-webkit-input-placeholder {
+            color: gray;
+            font-size: 16px;
+            /* placeholder位置  */
+            /*text-align: right;*/
+        }
+
+        p{
+            margin: 0 0 0 0
+        }
+
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        body{
+            background: #EFEFF4;
+        }
+        #containBox{
+            width: 100%;
+            /*background: red;*/
+            margin-top: 10px;
+        }
+        #searchBox{
+            width: 90%;
+            height: 50px;
+            background: white;
+            margin: auto;
+            border: 1px solid white;
+            border-radius: 8px;
+
+            display: flex;
+            flex-direction: row;
+            justify-content: flex-start;
+            align-items: center;
+        }
+        .sousuoImage{
+            width: 31px;
+            height: 32px;
+            margin-left: 5px;
+            background: green;
+        }
+        .dInput{
+            width: 220px;
+            height: 30px;
+            line-height: 30px;
+            border: none;
+            font-size: 15px;
+            margin-left: 10px;
+            /*background: blue;*/
+        }
+
+        /*列表样式*/
+        #data_list{
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            margin-top: 15px;
+        }
+        .content_view{
+            margin: 0;
+            padding: 0;
+            /*background: red;*/
+            list-style: none;
+            /*margin-left: 1px;*/
+            margin-top: 15px;
+        }
+        .bg_view{
+            width: 94%;
+            height: 150px;
+            background: white;
+            margin: auto;
+            border-radius: 15px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        /*顶部样式*/
+        .bg_top_view{
+            width: 95%;
+            height: 90px;
+            /*background: green;*/
+            display: flex;
+            flex-direction: row;
+            justify-content: flex-start;
+            align-items: center;
+            /*margin-left: 10px;*/
+            /*margin-top: 40px;*/
+        }
+        .img_box{
+            width: 60px;
+            height: 60px;
+            margin-left: 10px;
+        }
+        .text_box{
+            /*background: pink;*/
+            height: 60px;
+            margin-left: 10px;
+        }
+        .img_box img{
+            width: 53px;
+            height: 51px;
+            border-radius: 3px;
+            border: 1px solid #F4F4F4;
+        }
+
+        /*底部样式*/
+        .bg_bottom_view{
+            width: 95%;
+            height: 50px;
+            /*background: #C2BE9E;*/
+
+            display: flex;
+            flex-direction: row;
+        }
+        /*到这里去*/
+        .dzlq{
+            flex: 1;
+            /*background: #9ED99D;*/
+            border-top: 1px solid #F4F4F4;
+            border-right: 1px solid #F4F4F4;
+
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            z-index: 5;
+        }
+        .dzlq img{
+            width: 28px;
+            height: 24px;
+            background: red;
+        }
+        .dzlq p{
+
+        }
+        /*电话咨询*/
+        .dhzx{
+            flex: 1;
+            /*background: yellow;*/
+            border-top: 1px solid #F4F4F4;
+            border-left: 1px solid #F4F4F4;
+
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+        }
+        .dhzx img{
+            width: 25px;
+            height: 23px;
+            background: red;
+        }
+
+
+        .p_name{
+            font-size: 17px;
+            /*height: 20px;*/
+            /*background: #C2BE9E;*/
+            color: black;
+        }
+        .p_info{
+            font-size: 14px;
+            /*height: 20px;*/
+            /*background: #00a0df;*/
+            color: gray;
+        }
+        .p_dzlq{
+            font-size: 15px;
+            color: #67C3AE;
+        }
+        .p_dhzx{
+            font-size: 15px;
+            color: #67C3AE;
+        }
+
+    </style>
+    <script>
+        var jsonData;
+        $(document).ready(function () {
+            // alert("一进来就会执行");
+            $("#btnBack-nouse").click(function () {
+                // 1、返回上一页,不刷新history.html
+                // window.history.go(-1);
+                // javascript:window.history.go(-1)
+                // 2、返回上一页并刷新页面
+                // avascript:location.replace(this.href);event.returnValue=false;
+                // 3、返回上一页并刷新
+                // self.location=document.referrer
+                // 4、返回上一页面刷新的是自己
+                // javascript:document.parentWindow.location.reload();
+                self.location = document.referrer;
+            });
+            $(".backPage").click(function () {
+                // 返回上一级页面
+                self.location = document.referrer;
+            });
+
+            $.ajax({
+                type:"GET",
+                url:"Fujinwd.json",
+                data:null,
+                dataType:"json",
+                success:function (data) {
+                    console.log("------:"+data);
+                    console.log("------:"+data.name);
+                    var links = data.links;
+                    jsonData = links;
+                    var html = '';
+                    for (var i = 0; i < links.length; i++) {
+                        var name = links[i].name;
+                        var info = links[i].info;
+                        // var time = "2019-01-23 23:11:13";
+                        $("#data_list").append(function () {
+                            return "<li class=\"content_view\">\n" +
+                                "        <div class=\"bg_view\">\n" +
+                                "            <div class=\"bg_top_view\">\n" +
+                                "                <div class=\"img_box\">\n" +
+                                "                    <img src=\"../wuliuImages/cun.png\" alt=\"\">\n" +
+                                "                </div>\n" +
+                                "                <div class=\"text_box\">\n" +
+                                "                    <p class=\"p_name\">"+name+"</p>\n" +
+                                "                    <p class=\"p_info\">"+info+"</p>\n" +
+                                "                </div>\n" +
+                                "            </div>\n" +
+                                "            <div class=\"bg_bottom_view\">\n" +
+                                "                <div class=\"dzlq\" onclick=\"goHere("+i+")\">\n" +
+                                "                    <img src=\"../wuliuImages/dzlq.png\" alt=\"\">\n" +
+                                "                    <p class=\"p_dzlq\">到这里去</p>\n" +
+                                "                </div>\n" +
+                                "                <div class=\"dhzx\" onclick=\"telAsk("+i+")\">\n" +
+                                "                    <img src=\"../wuliuImages/dh.png\" alt=\"\">\n" +
+                                "                    <p class=\"p_dhzx\">电话咨询</p>\n" +
+                                "                </div>\n" +
+                                "            </div>\n" +
+                                "        </div>\n" +
+                                "    </li>";
+                        });
+                    }
+                }
+            })
+            // $('ul').on('click','li',function () {
+            //     var index = $(this).index();
+            //     console.log("当前li的序号:"+index);
+            // });
+            // $("#data_list").bind('click', ".dzlq", function () {
+            //     var alldzlq = $(".dzlq");
+            //     var dzlqIndex = $(".dzlq").index(this);
+            //     console.log("有多少个:"+alldzlq.length);
+            //     console.log("当前序号:"+dzlqIndex);
+            // });
+        });
+
+        // 写到ready()里面无效，只能写到script里，还不知道为啥 goHere("+i+")
+        function goHere(i) {
+            console.log("点击的是:"+i);
+            $.actions({
+                actions: [{
+                    text: "事件1",
+                    onClick: function() {
+                        //do something
+                    }
+                },{
+                    text: "事件2",
+                    onClick: function() {
+                        //do something
+                    }
+                }]
+            });
+        }
+        function telAsk(i) {
+            console.log("点击的是:"+i);
+            $.alert({
+                title: '确定拨打电话',
+                text: "电话:"+jsonData[i].tel,
+                onOK: function () {
+                    //点击确认
+                }
+            });
+        }
+
+    </script>
+</head>
+<body>
+
+<!--要在body中引入才起效-->
+<script src="../js/jquery-weui.js"></script>
+
+<header data-am-widget="header"
+        class="am-header am-header-default" style="background: #F7F7F8">
+    <!--左边图标-->
+    <div class="am-header-left am-header-nav">
+        <a href="#left-link" class="backPage">
+            <img class="am-header-icon-custom" src="../wuliuImages/zuoda.png" alt=""/>
+        </a>
+    </div>
+    <!--标题-->
+    <h1 class="am-header-title" style="color: black; font-size: 18px">
+        附件网点
+        <!--<img src="http://s.amazeui.org/media/i/brand/amazeui-cw.png" />-->
+    </h1>
+    <!--右边图标-->
+    <!--<div class="am-header-right am-header-nav">-->
+    <!--<a href="#right-link" class="">-->
+    <!--<img class="am-header-icon-custom" src="../wuliuImages/222.png" alt=""/>-->
+    <!--</a>-->
+    <!--</div>-->
+</header>
+
+<div id="containBox">
+    <div id="searchBox">
+        <img src="../wuliuImages/sousuo.png" alt="" class="sousuoImage">
+        <input type="text" name="sousuo" placeholder="请输入关键字查询" class="dInput">
+    </div>
+</div>
+
+<ul id="data_list">
+    <!--<li class="content_view">-->
+        <!--<div class="bg_view">-->
+            <!--<div class="bg_top_view">-->
+                <!--<div class="img_box">-->
+                    <!--<img src="../wuliuImages/cun.png" alt="">-->
+                <!--</div>-->
+                <!--<div class="text_box">-->
+                    <!--<p class="p_name">乌空服务站</p>-->
+                    <!--<p class="p_info">乌空村</p>-->
+                <!--</div>-->
+            <!--</div>-->
+            <!--<div class="bg_bottom_view">-->
+                <!--<div class="dzlq">-->
+                    <!--<img src="../wuliuImages/dzlq.png" alt="">-->
+                    <!--<p class="p_dzlq">到这里去</p></a>-->
+                <!--</div>-->
+                <!--<div class="dhzx">-->
+                    <!--<img src="../wuliuImages/dh.png" alt="">-->
+                    <!--<p class="p_dhzx">电话咨询</p>-->
+                <!--</div>-->
+            <!--</div>-->
+        <!--</div>-->
+    <!--</li>-->
+</ul>
+
+</script>
+</body>
+</html>

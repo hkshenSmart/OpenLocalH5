@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>选取地点</title>
+    <link rel="stylesheet" href="../css/WeUI/weui.css">
+    <link rel="stylesheet" href="../css/jQueryWeUI/jquery-weui.min.css">
+    <script src="../js/jQuery/jq.js"></script>
+    <!--AmazeUI-->
+    <script src="../js/AmazeUI/amazeui.js"></script>
+    <link rel="stylesheet" href="../css/AmazeUI/amazeui.css">
+    <!--本身-->
+    <link rel="stylesheet" href="../css/chooseplace.css">
+    <script src="../js/chooseplace.js"></script>
+    <style>
+    </style>
+    <script>
+    </script>
+</head>
+<!--vue-->
+<script src="https://cdn.jsdelivr.net/npm/vue"></script>
+<body>
+<!--要在body中引入才起效-->
+<script src="../js/jQueryWeUI/jquery-weui.js"></script>
+<script src="../js/jQueryWeUI/swiper.min.js"></script>
+<script src="../js/jQueryWeUI/city-picker.min.js"></script>
+
+<div class="searchBox_div">
+    <div class="left_text_div">
+        <img src="../images/ssicon.png">
+        <input type="text" placeholder="请输入上车点">
+    </div>
+    <button class="cancel_btn" type="button">取消</button>
+</div>
+<div class="selectBox_div">
+    <div class="left_select_div"><p class="left_select_p">我的位置</p></div>
+    <div class="right_select_div"><p class="right_select_p">地图选点</p></div>
+</div>
+
+<div class="recordBox_div">
+    <div class="list_header_div">
+        <p class="list_header_p">搜索历史</p>
+    </div>
+    <div class="listBox_div" id="listContent_div">
+        <ul>
+            <li v-for="(oneAddressModel, index) in AddressModel">
+                <div class="li_content_div" v-on:click="selectli(index)">
+                    <p class="top_name_p">{{oneAddressModel.name}}</p>
+                    <p class="bottom_info_p">{{oneAddressModel.address}}</p>
+                </div>
+            </li>
+        </ul>
+    </div>
+</div>
+
+</body>
+</html>

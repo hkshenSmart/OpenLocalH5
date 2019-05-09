@@ -1,0 +1,174 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>常用地址</title>
+    <link rel="stylesheet" href="../css/weui.css">
+    <link rel="stylesheet" href="../css/jquery-weui.min.css">
+    <script src="../js/jq.js"></script>
+
+    <link rel="stylesheet" href="http://cdn.amazeui.org/amazeui/2.7.2/js/amazeui.min.js">
+    <link rel="stylesheet" href="http://cdn.amazeui.org/amazeui/2.7.2/js/amazeui.js">
+    <link rel="stylesheet" href="http://cdn.amazeui.org/amazeui/2.7.2/css/amazeui.min.css">
+    <link rel="stylesheet" href="http://cdn.amazeui.org/amazeui/2.7.2/css/amazeui.css">
+
+    <style>
+        /*修改提示文字的颜色*/
+        input::-webkit-input-placeholder {
+            color: #C2C2C2;
+            font-size: 16px;
+            /* placeholder位置  */
+            /*text-align: right;*/
+        }
+
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        body{
+            background: #EFEFF4;
+        }
+        p{
+            margin: 0 0 0 0
+        }
+        #containBox{
+            width: 100%;
+            /*background: red;*/
+            margin-top: 10px;
+        }
+        #searchBox{
+            width: 90%;
+            height: 50px;
+            background: white;
+            margin: auto;
+            border: 1px solid white;
+            border-radius: 8px;
+
+
+            display: flex;
+            flex-direction: row;
+            justify-content: flex-start;
+            align-items: center;
+        }
+        .dInput{
+            width: 290px;
+            height: 30px;
+            line-height: 30px;
+            border: none;
+            font-size: 15px;
+            margin-left: 10px;
+            /*background: blue;*/
+        }
+        .sousuoImage{
+            width: 31px;
+            height: 32px;
+            margin-left: 5px;
+        }
+
+        #out_box{
+            background: #EFEFF4;
+            width: 100%;
+            height: 500px;
+            position: relative;
+        }
+        #tip_contain_navbar{
+            /*background: red;*/
+            width: 100%;
+            height: 130px;
+            position: absolute;
+            top: 50px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+            align-items: center;
+        }
+        #tip_image_box{
+            width: 100%;
+            /*background: #F6F6F6;*/
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        #tip_image_box img{
+            width: 112px;
+            height: 69px;
+        }
+        #tip_contain_navbar p{
+            color: black;
+            font-size: 19px;
+            /*background: green;*/
+        }
+    </style>
+    <script>
+        $(function () {
+            $("#btnBack-nouse").click(function () {
+                // 1、返回上一页,不刷新history.html
+                // window.history.go(-1);
+                // javascript:window.history.go(-1)
+                // 2、返回上一页并刷新页面
+                // avascript:location.replace(this.href);event.returnValue=false;
+                // 3、返回上一页并刷新
+                // self.location=document.referrer
+                // 4、返回上一页面刷新的是自己
+                // javascript:document.parentWindow.location.reload();
+                self.location = document.referrer;
+            });
+            $(".backPage").click(function () {
+                // 返回上一级页面
+                self.location = document.referrer;
+            });
+        })
+    </script>
+</head>
+<body>
+<!--要在body中引入才起效-->
+<script src="../js/jquery-weui.js"></script>
+
+<header data-am-widget="header"
+        class="am-header am-header-default" style="background: #EFEFF4">
+    <!--左边图标-->
+    <div class="am-header-left am-header-nav">
+        <a href="#left-link" class="backPage">
+            <img class="am-header-icon-custom" src="../wuliuImages/zuoda.png" alt=""/>
+        </a>
+    </div>
+    <!--标题-->
+    <h1 class="am-header-title" style="color: black; font-size: 18px">
+        常用地址
+        <!--<img src="http://s.amazeui.org/media/i/brand/amazeui-cw.png" />-->
+    </h1>
+    <!--右边图标-->
+    <!--<div class="am-header-right am-header-nav">-->
+    <!--<a href="#right-link" class="">-->
+    <!--<img class="am-header-icon-custom" src="../wuliuImages/222.png" alt=""/>-->
+    <!--</a>-->
+    <!--</div>-->
+</header>
+
+<!--<div id="containBox">-->
+    <!--<div id="searchBox">-->
+        <!--<img src="../wuliuImages/sousuo.png" alt="" class="sousuoImage">-->
+        <!--<input type="text" name="sousuo" placeholder="请输入运单号查询" class="dInput">-->
+    <!--</div>-->
+    <!--&lt;!&ndash;<input type="file" accept="image/*;capture=camera">&ndash;&gt;-->
+    <!--<div id="scanBox"><img src="../wuliuImages/saoyisao.png" alt="" class="saoyisaoImage"></div>-->
+<!--</div>-->
+<div id="containBox">
+    <div id="searchBox">
+        <img src="../wuliuImages/sousuo.png" alt="" class="sousuoImage">
+        <input type="text" name="sousuo" placeholder="请输入姓名/单位名称或电话号码查询" class="dInput">
+    </div>
+</div>
+<div id="out_box">
+    <div id="tip_contain_navbar">
+        <div id="tip_image_box">
+            <img src="../wuliuImages/zanwushuju.png" alt="">
+        </div>
+        <p>暂无数据</p>
+    </div>
+</div>
+
+</body>
+</html>

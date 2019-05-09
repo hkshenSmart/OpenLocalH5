@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+
+<div id="box_div">
+    <table style="border: 1px solid red">
+        <thead>
+        <tr>
+            <th>名字</th>
+            <th>年龄</th>
+            <th>性别</th>
+        </tr>
+        </thead>
+
+        <tbody>
+        <tr v-for="person in people">
+            <td>{{person.name}}</td>
+            <td>{{person.age}}</td>
+            <td>{{person.sex}}</td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+
+<div id="app">
+    <ul class="page">
+        <li v-for="n in pageCount" style="float: left; width: 90px">
+            <a href="javascripit:void(0)" v-bind:class="activeNumber === n + 1 ? 'active':'' ">{{n+1}}</a>
+            <!--缩写语法-->
+            <!--<a href="javascripit:void(0)" :class="activeNumber=== n + 1 ? 'active' : ''">{{ n + 1 }}</a>-->
+        </li>
+    </ul>
+</div>
+
+</body>
+<script src="https://cdn.jsdelivr.net/npm/vue"></script>
+<script>
+    var dataVM = new Vue({
+        el: "#box_div",
+        data: {
+            people: [{
+                name: "申怀坤",
+                age: "33",
+                sex: "男"
+            }, {
+                name: "张三",
+                age: "88",
+                sex: "女"
+            }, {
+                name: "张三",
+                age: "88",
+                sex: "女"
+            }, {
+                name: "张三",
+                age: "88",
+                sex: "女"
+            }, {
+                name: "张三",
+                age: "88",
+                sex: "女"
+            }, {
+                name: "张三",
+                age: "88",
+                sex: "女"
+            }, {
+                name: "张三",
+                age: "88",
+                sex: "女"
+            }]
+        }
+    })
+
+    var liVM = new Vue({
+        el: "#app",
+        data: {
+            activeNumber: 1,
+            pageCount: 10
+        }
+    })
+</script>
+</html>

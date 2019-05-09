@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="../js/jq.js"></script>
+    <title>Document</title>
+    <style>
+
+    </style>
+    <script>
+        window.onload = function () {
+            document.getElementsByTagName('a')[0].onclick = function () {
+                // 1.获取XHR对象
+                var request = new XMLHttpRequest();
+                // 2.配置Ajax请求参数：请求类型 请求的url资源 请求方式 默认为true 异步
+                //request.open('GET', this.href, true);
+                request.open('GET', this.href + '?=' + (new Date()), true);
+                // 3.将请求发送到服务器，GET请求不需要参数，可为空或者传入null
+                request.send(null);
+                // 4.Ajax对象的事件属性onreadystatechange,不断监听服务端的响应
+                request.onreadystatechange = function () {
+                    // 5.当请求状态为4,并且响应码为200时 表示服务器响应成功 并返回了数据
+                    if (request.readyState === 4 && request.status === 200) {
+                        // 6.根据数据类型，来更新当前页面中的DOM节点信息
+                        document.getElementsByTagName("h3")[0].innerHTML = request.responseText;
+                    }
+                }
+                // 取消元素的默认点击行为
+                return false;
+            }
+        }
+    </script>
+</head>
+<body>
+<a href="hello.txt">天禧</a>
+<h3>哈哈哈</h3>
+<p>---------------------------------------------------</p>
+<ul>
+    <li>1</li>
+    <li>2</li>
+    <li>3</li>
+    <li>4</li>
+    <li>5</li>
+    <li>6</li>
+    <li>7</li>
+    <li>8</li>
+</ul>
+</body>
+</html>

@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="../js/jq.js"></script>
+    <title>Document</title>
+    <style>
+        #img{width: 0; opacity: 0}
+        #content{display: none}
+    </style>
+    <script>
+        $(document).ready(function () {
+            $("#btn1").click(function () {
+                if ($("#btn1").text() === "显示图片与简介") {
+                    $("#img").animate({ // animate的参数1 动画属性对象 必选
+                        width: 300, // 属性必须是css属性，只支持数值型值，不支持字体颜色
+                        opacity: 1,
+                        "border-radius": 25
+                    }, { // animate的参数2 动画选项对象 可选
+                        duration: 4000,
+                        complete: function () {
+                            $(this).css("box-shadow", "5px 5px 2px #444");
+                            $("#content").slideDown(3000, function () {
+                                $(this).children().css({"font-size": "24px", "color": "red"});
+                                $("#btn1").text("隐藏图片与简介");
+                            })
+                        }
+                    });
+                }
+                else {
+                    $("#content").slideUp(3000, function () {
+                        //$("#img").css({"box-shadow":"0px 0px 0px #clear", "display": "none"});
+                        $("#img").css("box-shadow", "0px 0px 0px #clear").animate({
+                            width: 0,
+                            opacity: 0,
+                            "border-radius": 0
+                        }, {
+                            duration: 4000,
+                            complete: function () {
+                                $("#btn1").text("显示图片与简介");
+                            }
+                        });
+                    });
+                }
+            });
+        });
+    </script>
+</head>
+<body>
+
+<button type="button" name="button" id="btn1">显示图片与简介</button>
+<img src="../Images/9.png" alt="" id="img">
+<div id="content">
+    <h3>姓名：申怀坤</h3>
+    <p>生日：不知道</p>
+    <p>简介：aaaaaaaaaaaaaaaaaaaaaa
+    bbbbbbbbbbbbbbbbbbbbbb
+    cccccccccccccccccccccc
+    ddddddddddddddddddddddd
+    eeeeeeeeeeeeeeeeeeeeeee
+    fffffffffffffffffffffffffffffff
+    ggggggggggggggggggggg</p>
+</div>
+
+</body>
+</html>

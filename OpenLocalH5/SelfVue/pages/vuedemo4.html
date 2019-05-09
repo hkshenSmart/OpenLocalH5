@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+
+<div id="app1">
+    <p><input type="text" v-model="message"></p>
+    <p>
+        <!--click事件直接绑定一个方法-->
+        <button v-on:click="greet">问候</button>
+        <!--缩写语法-->
+        <!--<button @click="greet">Greet</button>-->
+    </p>
+    <p>
+        <!--click事件使用内联语句-->
+        <button v-on:click="say('你好')">你好</button>
+    </p>
+</div>
+
+</body>
+<script src="https://cdn.jsdelivr.net/npm/vue"></script>
+<script>
+    var dataVM = new Vue({
+        el: "#app1",
+        data: {
+            message: "你好啊 天下."
+        },
+        // 在method中定义方法
+        methods: {
+            greet: function () {
+                // 方法内的this指向dataVM
+                alert(this.message);
+            },
+            say: function (msg) {
+                alert(msg);
+            }
+        }
+    })
+</script>
+</html>

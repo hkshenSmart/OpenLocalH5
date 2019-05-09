@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="../js/jq.js"></script>
+    <title>Document</title>
+    <style>
+        #first-image{width: 200px}
+        #img{float: left}
+        /*display:none 隐藏*/
+        #content{display: none}
+    </style>
+    <script>
+        $(document).ready(function () {
+            // $("img").click(function () {
+            //     var num = Math.floor(Math.random()*9 + 1);
+            //     $(this).attr("src", "../Images/"+num+".png");
+            //     $(this).unbind("click"); // 移除事件 指定事件类型
+            // });
+            // 创建函数表达式
+            // var show = function () {
+            //     var info = '<div><h3>申怀坤1</h3><h3>申怀坤2</h3><h3>申怀坤3</h3></div>';
+            //     $(this).after(info);
+            //     $(this).unbind();
+            // };
+            // $("img").click(show);
+            // function show() {
+            //     var info = '<div><h3>申怀坤1</h3><h3>申怀坤2</h3><h3>申怀坤3</h3></div>';
+            //     $(this).after(info);
+            //     $(this).unbind();
+            // }
+
+            // $("img").click(function () {
+            //     var info = '<div><h3>申怀坤1</h3><h3>申怀坤2</h3><h3>申怀坤3</h3></div>';
+            //     $(this).after(info);
+            //     $(this).unbind();
+            // });
+            $("#btn").click(function () {
+                if ($(this).text() === '显示简介') {
+                    // $(this).text("隐藏简介");
+                    // $("#content").show("slow"); //1000 为一秒 fast slow fadeIn一样 fadeOut fadeToggle自动切换 fadeTo(5000, 0.2, function(){})
+                    $("#content").show(3000, function () {
+                        $("p").css("color", "red");
+                        $('#btn').text("隐藏简介");
+                    });
+                }
+                else {
+                    $(this).text("显示简介");
+                    $("#content").hide();
+                }
+            })
+        })
+    </script>
+</head>
+<body>
+
+<img src="../Images/1.png" alt="" id="first-image">
+<div id="wrap">
+    <img src="../Images/2.png" alt="第二张" width="300px" id="img">
+    <div id="content">
+        <h1>申怀坤</h1>
+        <p>
+            我是一名程序员，写的代码是oc和js
+        </p>
+        <p>代码写不完怎么办，我的填啊</p>
+        <p>还是要写代码啊</p>
+    </div>
+    <!--消除浮动-->
+    <div style="clear: both"></div>
+    <button type="button" name="button" id="btn">显示简介</button>
+</div>
+
+</body>
+</html>

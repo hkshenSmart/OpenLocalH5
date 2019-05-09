@@ -1,0 +1,525 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>物流首页</title>
+    <link rel="stylesheet" href="../css/weui.css">
+    <link rel="stylesheet" href="../css/jquery-weui.min.css">
+    <!--<link rel="stylesheet" href="https://cdn.bootcss.com/weui/1.1.3/style/weui.min.css">-->
+    <!--<link rel="stylesheet" href="https://cdn.bootcss.com/jquery-weui/1.2.1/css/jquery-weui.min.css">-->
+    <script src="../js/jq.js"></script>
+
+    <link rel="stylesheet" type="text/css" href="../css/MyJijian.css">
+    <link rel="stylesheet" type="text/css" href="../css/Baochewuliu.css">
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        html,body{
+            height: 100%;
+            -webkit-tap-highlight-color: transparent;
+            /*position: relative;*/
+        }
+        #bottom_image{
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            /*background: red;*/
+        }
+        #contain_btn{
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            right: 20px;
+            /*background: red;*/
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+        }
+        #fujinwangdian{
+            background: white;
+            /*flex: 1;*/
+            position: relative;
+        }
+        #woyaochajian{
+            background: white;
+            /*flex: 1;*/
+            position: relative;
+        }
+        #btn1{
+            background-image: url("../wuliuImages/222.png");
+            position: absolute;
+            background-size: cover;
+        }
+        #btn2{
+            background-image: url("../wuliuImages/333.png");
+            position: absolute;
+            background-size: cover;
+        }
+        #p1{
+            position: absolute;
+            /*background: red;*/
+            /*line-height: ;*/
+            /*vertical-align: center;*/
+            /*margin: auto;*/
+            font-size: 19px;
+            font-family: '微软雅黑', 'Microsoft YaHei', Arial, sans-serif;
+            color: #22AB8E;
+        }
+        #p2{
+            position: absolute;
+            font-size: 19px;
+            font-family: '微软雅黑', 'Microsoft YaHei', Arial, sans-serif;
+            color: #22AB8E;
+        }
+        #listItem{
+            background: white;
+        }
+        #listItem ul li{
+            float: left;
+            /*width: 30px;*/
+            /*background: red;*/
+            list-style-type: none;
+            /*border: 1px solid blue;*/
+            /*line-height: 42px;*/
+        }
+        .dotPoint{
+            background: #22AB8E;
+            width: 6px;
+            height: 6px;
+            border-radius: 3px;
+            margin-left: 8px;
+        }
+
+    </style>
+    <script>
+        $(function () {
+            // 获取当前手机屏幕宽度
+            var sWidth = $(window).width();
+            var bodyHeight = $(document.body).height();
+            console.log("屏幕的宽度:"+sWidth);
+            console.log("特定图片需要的高度:"+sWidth*(171/414.0));
+            console.log("文档body的高度:"+bodyHeight);
+            console.log("屏幕的高度:"+$(window).height());
+            console.log("浏览器当前窗口文档body的总高度:"+$(document.body).outerHeight());
+
+            // 顶部的背景图片
+            var $top_div = $("<div id=\"topImage\"></div>");
+            $("#tab1").append($top_div);
+            $("#topImage").width(sWidth);
+            // Screen_Width * (150 / 375.0)
+            $("#topImage").height(sWidth*(171/414.0));
+            $("#topImage").css("background-image", "url('../wuliuImages/111.png')");
+            $("#topImage").css("background-size", "cover");
+
+            // 底部大容器
+            var $bottom_div = $("<div id=\"bottomContain\"></div>");
+            $("#tab1").append($bottom_div);
+            $("#bottomContain").height(bodyHeight - sWidth*(171/414.0) - sWidth*(50/414.0));
+            $("#bottomContain").css({"width": sWidth, "background": "#EFEFF4", "position": "relative"});
+
+            // 底部的背景图片
+            var bImage_div = $("<div id=\"bottom_image\"></div>");
+            $("#bottomContain").append(bImage_div);
+            $("#bottom_image").css({"position": "absolute"});
+            $("#bottom_image").height(sWidth*(245/414.0));
+            $("#bottom_image").css("background-image", "url('../wuliuImages/444.png')");
+            $("#bottom_image").css("background-size", "cover");
+
+            // 连个按钮部分
+            var btn_div = $("<div id=\"contain_btn\"><div id='fujinwangdian'><div id='btn1'></div><p id='p1'>附件网点</p></div><div id='woyaochajian'><div id='btn2'></div><p id='p2'>我要查件</p></div></div>");
+            $("#bottomContain").append(btn_div);
+            $("#contain_btn").css({"position": "absolute"});
+            $("#contain_btn").height(sWidth*(80/375.0));
+            $("#fujinwangdian").width((sWidth - 60)/2.0);
+            $("#woyaochajian").width((sWidth - 60)/2.0);
+            $("#fujinwangdian").height(sWidth*(80/375.0));
+            $("#woyaochajian").height(sWidth*(80/375.0));
+            $("#btn1").width(sWidth*(41/375.0)).height(sWidth*(41/375.0));
+            $("#btn1").css({"left": sWidth*(15/375.0), "top": sWidth*(19/375.0)});
+            $("#btn2").width(sWidth*(41/375.0)).height(sWidth*(41/375.0));
+            $("#btn2").css({"left": sWidth*(15/375.0), "top": sWidth*(19/375.0)});
+            $("#p1").css({"left": sWidth*(60/375.0), "top": sWidth*(25/375.0), "width": sWidth*(80/375.0), "height":sWidth*(30/375.0)});
+            $("#p2").css({"left": sWidth*(60/375.0), "top": sWidth*(25/375.0), "width": sWidth*(80/375.0), "height":sWidth*(30/375.0)});
+
+            // 一个列表
+            var list_div = $("<div id=\"listItem\"><ul><li>上门取件<img class='dotPoint'></li><li>快速配送<img class='dotPoint'></li><li>实时跟踪<img class='dotPoint'></li><li>送货到村</li></ul></div>");
+            $("#bottomContain").append(list_div);
+            $("#listItem").css({"position": "absolute"});
+            $("#listItem").height(sWidth*(42/375.0));
+            $("#listItem").width(sWidth - 40);
+            $("#listItem").css({"left": 20, "top": sWidth*(80/375.0) + 40});
+            $("ul").css({"width": sWidth - 40, "height": sWidth*(42/375.0), "background": "white", "overflow": "hidden"});
+            $("ul>li").css({"width": (sWidth - 40)/4.0, "height": sWidth*(42/375.0), "line-height": "42px", "text-align": "center"});
+
+
+            // 切换tabbar
+            $(".weui-tabbar__item").click(function () {
+                var allTabbar = $(".weui-tabbar__item");
+                var allPage = $(".weui-tab__bd-item");
+                var tabbarIndex = $(".weui-tabbar__item").index(this);
+                console.log("当前选择的tabbar:" + tabbarIndex);
+                console.log("获取所有的page数量:" + allPage.length);
+                if (tabbarIndex == 1) {
+                    $.alert("正在升级该功能，寄件请前往服务站通村村服务站");
+                }
+                /*
+                for (let i = 0; i < allTabbar.length; i++) {
+                    allTabbar[i].setAttribute("class", "weui-tabbar__item");
+                    allPage[i].setAttribute("class", "weui-tab__bd-item");
+                    //page[i].style.display = "none";
+                }
+                $(this).attr("class", "weui-tabbar__item weui-bar__item--on");
+                allPage[tabbarIndex].setAttribute("class", "weui-tab__bd-item weui-tab__bd-item--active");
+                */
+            })
+
+            // 附近网点
+            $("#fujinwangdian").click(function () {
+                $(location).attr('href', 'Fujinwd.html');
+                // $(window).attr('location','https://www.baidu.com');
+                // $(location).prop('href', 'https://www.baidu.com')
+                // window.location.reload();//刷新当前页面，重新向服务器请求数据
+                // window.location.replace("hello.html"); //刷新当前页面，重新向服务器请求数据
+            });
+            // 我要查件
+            $("#woyaochajian").click(function () {
+                $(location).attr('href', 'MyChaJian.html');
+            });
+            // 切换小件物流
+            $("#navbar_1").click(function () {
+                $(this).css({"border-bottom": "1.5px solid #35CBA7", "border-right": "1px solid #EFEFF4"});
+                $("#navbar_1>span").css({"color": "#35CBA7"});
+                $("#navbar_2").css({"border": "none"});
+                $("#navbar_2>span").css({"color": "#7F838B"});
+
+                $("#contain_navbar_1").css({"display": "block"});
+                $("#contain_navbar_2").css({"display": "none"});
+            });
+            // 切换包车物流
+            $("#navbar_2").click(function () {
+                $(this).css({"border-bottom": "1.5px solid #35CBA7", "border-left": "1px solid #EFEFF4"});
+                $("#navbar_2>span").css({"color": "#35CBA7"});
+                $("#navbar_1").css({"border": "none"});
+                $("#navbar_1>span").css({"color": "#7F838B"});
+
+                $("#contain_navbar_2").css({"display": "block"});
+                $("#contain_navbar_1").css({"display": "none"});
+            });
+
+            // 物品类型重量减
+            $(".delete").on("click", function () {
+                var zlInput = $(".num_input");
+                var num = parseFloat(zlInput.val());
+                if (num <= 0) {
+                    return;
+                }
+                else {
+                    zlInput.val((num-1).toFixed(2));
+                }
+            });
+            // 物品类型重量加
+            $(".add").on("click", function () {
+                var zlInput = $(".num_input");
+                var num = parseFloat(zlInput.val());
+                zlInput.val((num+1).toFixed(2));
+            });
+            // 常用地址
+            $(".address_ji").on("click", function () {
+                $(location).attr('href', 'UsualAddress.html');
+            });
+            $(".address_shou").on("click", function () {
+                $(location).attr('href', 'UsualAddress.html');
+            });
+            // 寄件信息
+            $("#ji_div .jijian_left .bottomInfo").on("click", function () {
+                $(location).attr('href', 'JijianInfo.html');
+            });
+            // 收件信息
+            $("#shou_div .jijian_left .bottomInfo").on("click", function () {
+                $(location).attr('href', 'ShoujianInfo.html');
+            });
+            // 车辆类型
+            $("#carType_div").on("click", function () {
+                $.actions({
+                    title: "请选择车辆类型",
+                    onClose: function() {
+                        console.log("close");
+                    },
+                    actions: [
+                        {
+                            text: "小型货车",
+                            className: "color-primary",
+                            onClick: function() {
+                                $.alert("小型货车");
+                            }
+                        },
+                        {
+                            text: "中型货车",
+                            className: "color-primary",
+                            // className: "color-warning",
+                            // className: 'color-danger',
+                            onClick: function() {
+                                $.alert("中型货车”");
+                            }
+                        },
+                        {
+                            text: "大型货车",
+                            className: "color-primary",
+                            onClick: function() {
+                                $.alert("大型货车");
+                            }
+                        }
+                    ]
+                });
+            });
+            // 用车时间
+            $("#carDate").calendar({
+                onChange: function (p, values, displayValues) {
+                    console.log(values, displayValues);
+                }
+                // value: ['2016-12-12'],
+                // dateFormat: 'yyyy-mm-dd'
+            });
+            // 物品类型
+            $(".wupingType_left").on("click", function () {
+                $.actions({
+                    title: "禁忌物品：各种枪支弹药、易燃易爆、化学危险品、毒品、各种生化制品、传染性感染性物质、各类非法伪造/侵权物品...",
+                    onClose: function() {
+                        console.log("close");
+                    },
+                    actions: [
+                        {
+                            text: "文件",
+                            className: "color-primary",
+                            onClick: function() {
+                                $.alert("文件");
+                            }
+                        },
+                        {
+                            text: "数码产品",
+                            className: "color-primary",
+                            onClick: function() {
+                                $.alert("数码产品");
+                            }
+                        },
+                        {
+                            text: "生活用品",
+                            className: "color-primary",
+                            onClick: function() {
+                                $.alert("生活用品");
+                            }
+                        },
+                        {
+                            text: "服饰",
+                            className: "color-primary",
+                            onClick: function() {
+                                $.alert("服饰");
+                            }
+                        },
+                        {
+                            text: "农副产品",
+                            className: "color-primary",
+                            onClick: function() {
+                                $.alert("农副产品");
+                            }
+                        },
+                        {
+                            text: "其他",
+                            className: "color-primary",
+                            onClick: function() {
+                                $.alert("其他");
+                            }
+                        }
+                    ]
+                });
+            });
+        })
+    </script>
+</head>
+<body>
+<!--要在body中引入才起效-->
+<script src="../js/jquery-weui.js"></script>
+<script src="../js/swiper.min.js"></script>
+<script src="../js/city-picker.min.js"></script>
+
+<div class="weui-tab">
+    <div class="weui-tab__bd">
+        <div id="tab1" class="weui-tab__bd-item weui-tab__bd-item--active">
+            <!--<div id="topImage"></div>-->
+            <!--<img src="../wuliuImages/111.png" alt="">-->
+            <!--<div id="bottomContain"></div>-->
+        </div>
+
+        <div id="tab2" class="weui-tab__bd-item">
+            <!--<h1>页面二</h1>-->
+        </div>
+
+        <div id="tab3" class="weui-tab__bd-item">
+            <div id="page3_div">
+                <!--寄件-->
+                <div id="ji_div">
+                    <div class="jijian_left">
+                        <img class="jiian_img" src="../wuliuImages/jijian.png" alt="">
+                        <p class="bottomInfo">请选择寄件信息</p>
+                        <!--<input class="jijian_input" type="text" placeholder="请选择寄件信息" disabled="disabled">-->
+                    </div>
+                    <div class="jijian_right">
+                        <img class="youjiantou_img" src="../wuliuImages/youjiantou.png" alt="">
+                        <img class="shuxian_img" src="../wuliuImages/shuxian.png" alt="">
+                        <button class="address_ji">常用地址</button>
+                    </div>
+                </div>
+                <!--收件-->
+                <div id="shou_div">
+                    <div class="jijian_left">
+                        <img class="jiian_img" src="../wuliuImages/shoujian.png" alt="">
+                        <p class="bottomInfo">请选择收件信息</p>
+                        <!--<input class="shoujian_input" type="text" placeholder="请选择寄件信息" disabled="disabled">-->
+                    </div>
+                    <div class="jijian_right">
+                        <img class="youjiantou_img" src="../wuliuImages/youjiantou.png" alt="">
+                        <img class="shuxian_img" src="../wuliuImages/shuxian.png" alt="">
+                        <button class="address_shou">常用地址</button>
+                    </div>
+                </div>
+                <!--车辆类型-->
+                <div id="carType_div">
+                    <div class="part_left">
+                        <p class="topName">车辆类型</p>
+                        <p class="bottomInfo">请选择车辆类型</p>
+                    </div>
+                    <div class="part_right">
+                        <img class="youjiantou_img" src="../wuliuImages/youjiantou.png" alt="">
+                    </div>
+                </div>
+                <!--用车时间-->
+                <div id="carTime_div">
+                    <div class="part_left">
+                        <p class="topName">用车时间</p>
+                        <!--<p class="bottomInfo">请选择用车时间</p>-->
+                        <input class="jijian_input" id="carDate" type="text" placeholder="请选择寄件信息" readonly>
+                    </div>
+                    <div class="part_right">
+                        <img class="youjiantou_img" src="../wuliuImages/youjiantou.png" alt="">
+                    </div>
+                </div>
+                <!--物品类型-->
+                <div id="wupingType_div">
+                    <div class="wupingType_left">
+                        <p class="topName">物品类型</p>
+                        <p class="bottomInfo">请选择物品类型</p>
+                    </div>
+                    <div class="wupingType_right">
+                        <img class="shuxian_img" src="../wuliuImages/shuxian.png" alt="">
+                        <div class="wp_right">
+                            <p class="topName">预估重量</p>
+                            <div class="weight_box">
+                                <button class="delete"></button>
+                                <!--只能输入小数点和数字-->
+                                <input class="num_input" type="text" value=0 onkeyup="value=value.replace(/[^\d{1,}\.\d{1,}|\d{1,}]/g,'')">
+                                <button class="add"></button>
+                                <p class="unit_p">kg</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--备注-->
+                <div id="mark_div">
+                    <div class="p_box">
+                        <p>备注</p>
+                    </div>
+                    <div class="textarea_box">
+                        <textarea name="mark" class="mark_textarea" cols="30" rows="10" placeholder="请输入备注信息"></textarea>
+                    </div>
+                </div>
+                <!--提交-->
+                <div id="submit_div">
+                    <button class="submit_btn">提交</button>
+                </div>
+            </div>
+        </div>
+
+        <div id="tab4" class="weui-tab__bd-item" style="background: #EFEFF4">
+            <div id="navbar_box">
+                <div id="navbar_1">
+                    <span>小件物流</span>
+                </div>
+                <div id="navbar_2">
+                    <span>包车物流</span>
+                </div>
+            </div>
+            <div id="contain_navbar_1">
+                <!--顶部第一个navbar-->
+                <div id="containBox_xj">
+                    <div id="searchBox_xj">
+                        <img src="../wuliuImages/sousuo.png" alt="" class="sousuoImage">
+                        <input type="text" name="sousuo" placeholder="请输入运单号查询" class="dInput">
+                    </div>
+                    <!--<input type="file" accept="image/*;capture=camera">-->
+                    <div id="scanBox"><img src="../wuliuImages/saoyisao.png" alt="" class="saoyisaoImage"></div>
+                </div>
+                <div id="tip_contain_navbar_1">
+                    <div id="tip_image_box_xj">
+                        <img src="../wuliuImages/zanwushuju.png" alt="">
+                    </div>
+                    <p>暂无数据</p>
+                </div>
+            </div>
+
+            <div id="contain_navbar_2">
+                <!--顶部第二个navbar-->
+                <div id="containBox_bc">
+                    <div id="searchBox_bc">
+                        <img src="../wuliuImages/sousuo.png" alt="" class="sousuoImage">
+                        <input type="text" name="sousuo" placeholder="请输入运单号查询" class="dInput">
+                    </div>
+                </div>
+                <div id="tip_contain_navbar_2">
+                    <div id="tip_image_box_bc">
+                        <img src="../wuliuImages/zanwushuju.png" alt="">
+                    </div>
+                    <p>暂无数据</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="weui-tabbar">
+        <a href="#tab1" class="weui-tabbar__item weui-bar__item--on">
+            <!--<span class="weui-badge" style="position: absolute;top: -.4em;right: 1em;">8</span>-->
+            <div class="weui-tabbar__icon">
+                <img src="../wuliuImages/555.png" alt="">
+            </div>
+            <p class="weui-tabbar__label">物流首页</p>
+        </a>
+
+        <a href="#tab2" class="weui-tabbar__item">
+            <div class="weui-tabbar__icon">
+                <img src="../wuliuImages/666.png" alt="">
+            </div>
+            <p class="weui-tabbar__label">我要寄件</p>
+        </a>
+
+        <a href="#tab3" class="weui-tabbar__item">
+            <div class="weui-tabbar__icon">
+                <img src="../wuliuImages/777.png" alt="">
+            </div>
+            <p class="weui-tabbar__label">包车物流</p>
+        </a>
+
+        <a href="#tab4" class="weui-tabbar__item">
+            <div class="weui-tabbar__icon">
+                <img src="../wuliuImages/888.png" alt="">
+            </div>
+            <p class="weui-tabbar__label">我的寄件</p>
+        </a>
+    </div>
+</div>
+
+</body>
+</html>

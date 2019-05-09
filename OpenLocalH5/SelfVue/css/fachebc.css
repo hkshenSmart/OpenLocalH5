@@ -1,0 +1,208 @@
+/*修改提示文字的颜色*/
+input::-webkit-input-placeholder {
+    color: #C2C2C2;
+    font-size: 15px;
+    /* placeholder位置  */
+    text-align: left;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+}
+html, body{
+    width: 100%;
+    height: 100%;
+}
+body{
+    background: #EFF3F4;
+}
+p{
+    margin: 0 0 0 0;
+}
+span{
+    margin: 0 0 0 0;
+}
+
+/*导航条*/
+.top_header{
+    width: 100%;
+    height: 64px;
+    /*position: fixed;*/
+    background: white;
+    border: 1px solid #eeeeee;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.left_header{
+    width: 20%;
+    /*background: red;*/
+
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+}
+.back_btn{
+    width: 13.8px;
+    height: 25px;
+    background-image: url("../images/normal/zuoda.png");
+    background-size: cover;
+    margin-left: 15px;
+    border: none;
+    background-color: transparent;
+}
+.middle_header{
+    width: 60%;
+    /*background: blue;*/
+
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+.top_title{
+    color: #414141;
+    font-size: 18px;
+    font-weight: bold;
+}
+.right_header{
+    width: 20%;
+    /*background: green;*/
+    opacity: 0;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+.right_header img{
+    width: 23px;
+    height: 20px;
+}
+.right_btn{
+    color: #414141;
+    font-size: 15px;
+    border: none;
+    background-color: transparent;
+}
+
+/*内容*/
+.bccontainBox_div{
+    width: 100%;
+    height: 130px;
+    background: white;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+.bgcontainBox_div{
+    width: 100%;
+    height: 65%;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+.left_bg_div{
+    width: 90%;
+    height: 100%;
+    /*background: green;*/
+
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+}
+.twopoint_img{
+    width: 15px;
+    height: 41px;
+    margin-left: 20px;
+}
+.twoplace_div{
+    height: 62px;
+    /*background: yellow;*/
+    margin-left: 5px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: flex-start;
+}
+.top_p{
+    /*贵阳*/
+    font-size: 17px;
+    color: #535253;
+}
+.bottom_p{
+    /*猫场*/
+    font-size: 17px;
+    color: #535253;
+}
+.right_witch_div{
+    width: 10%;
+    /*background: blue;*/
+
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+}
+.right_switch_btn{
+    width: 14px;
+    height: 14px;
+    background-image: url("../images/diaotou.png");
+    background-size: cover;
+}
+
+.timeBox_div{
+    width: 100%;
+    height: 35%;
+    /*background: yellow;*/
+
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+}
+.start_time_div{
+    height: 100%;
+    margin-left: 20px;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+}
+.start_p{
+    font-size: 17px;
+    color: #6EB03B;
+}
+.start_time_p{
+    color: #535253;
+    font-size: 17px;
+    margin-left: 5px;
+}
+.end_time_div{
+    height: 100%;
+    /*background: yellow;*/
+    margin-left: 15px;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+}
+.end_p{
+    font-size: 17px;
+    color: #D72218;
+}
+.end_time_p{
+    color: #535253;
+    font-size: 17px;
+    margin-left: 5px;
+}

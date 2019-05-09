@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>呼叫班车</title>
+    <link rel="stylesheet" href="../css/WeUI/weui.css">
+    <link rel="stylesheet" href="../css/jQueryWeUI/jquery-weui.min.css">
+    <script src="../js/jQuery/jq.js"></script>
+    <!--AmazeUI-->
+    <script src="../js/AmazeUI/amazeui.js"></script>
+    <link rel="stylesheet" href="../css/AmazeUI/amazeui.css">
+    <!--本身-->
+    <link rel="stylesheet" href="../css/homepage.css">
+    <script src="../js/homepage.js"></script>
+    <style>
+    </style>
+    <script>
+    </script>
+</head>
+<!--vue-->
+<script src="https://cdn.jsdelivr.net/npm/vue"></script>
+<body>
+<!--要在body中引入才起效-->
+<script src="../js/jQueryWeUI/jquery-weui.js"></script>
+<script src="../js/jQueryWeUI/swiper.min.js"></script>
+<script src="../js/jQueryWeUI/city-picker.min.js"></script>
+
+<header class="top_header">
+    <div class="left_header">
+        <button class="back_btn" type="button"></button>
+    </div>
+    <div class="middle_header">
+        <span class="top_title">呼叫班车</span>
+    </div>
+    <div class="right_header">
+        <button class="right_btn" type="button">呼叫记录</button>
+    </div>
+</header>
+
+<div class="saAddressBox_div">
+    <div class="leftsa_div">
+        <div class="top_dot"></div>
+        <div class="middleimg_div"></div>
+        <div class="bottom_dot"></div>
+    </div>
+    <div class="rightsa_div">
+        <div class="rightsa_top_div">
+            <p id="upCar_p">上车点我的位置</p>
+            <img src="../images/bianji.png" alt="">
+        </div>
+        <div class="rightsa_bottom_div">
+            <p id="downCar_p">请输入下车点</p>
+        </div>
+    </div>
+</div>
+<div class="gonowBox_div">
+    <div class="leftgonow_div">
+        <img class="lgnow_time_img" src="../images/jilutime.png" alt="">
+        <input id="lgnow_input" type="text" placeholder="马上出发" readonly>
+        <img class="lgnow_jiantou_img" src="../images/lvyoujiantou.png" alt="">
+    </div>
+    <div class="rightgonow_div">
+        <img class="xiaotx_img" src="../images/xiaotx.png" alt="">
+        <button class="jianjian_btn"></button>
+        <!--只能输入小数点和数字-->
+        <input class="num_input" type="text" value=0 onkeyup="value=value.replace(/[^\d{1,}\.\d{1,}|\d{1,}]/g,'')">
+        <button class="jiajia_btn"></button>
+    </div>
+</div>
+<div class="searchBox_div">
+    <button class="search_btn" type="button">查询</button>
+</div>
+<div class="selectBox_div">
+    <div class="left_select_div"><p class="left_select_p">附近班线</p></div>
+    <div class="right_select_div"><p class="right_select_p">常用班线</p></div>
+</div>
+<div class="carList_div" id="carContent_div">
+    <ul>
+        <li v-for="(onehpModel, i) in hpModel">
+            <div class="listBox_div">
+                <div class="left_listBox_div">
+                    <img src="../images/carIcon.png" alt="">
+                </div>
+                <div class="right_listBox_div">
+                    <div class="topcarBox_div">
+                        <div class="direction_div">
+                            <p class="direction_p" id="directionName_p">贵阳-猫场</p>
+                            <p class="directionInfo_p" id="directionInfoName_p">{{onehpModel.carclass}}</p>
+                        </div>
+                        <div class="locationBox_div">
+                            <p class="location_p">车辆位置</p>
+                            <p class="lookMap_p">请查看地图</p>
+                        </div>
+                    </div>
+                    <div class="bottomcarBox_div">
+                        <div class="lookMapBox_div" v-on:click="lookmap(i)">
+                            <img src="../images/ditu.png" alt="">
+                            <p>查看地图</p>
+                        </div>
+                        <div class="buyPiaoBox_div" v-on:click="buyPiao(i)">
+                            <img src="../images/goupiao.png" alt="">
+                            <p>我要购票</p>
+                        </div>
+                        <div class="callCarBox_div" v-on:click="callCar(i)">
+                            <img src="../images/hujiao.png" alt="">
+                            <p>呼叫车辆</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </li>
+    </ul>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="../js/jq.js"></script>
+    <title>Document</title>
+    <style>
+        .img{width: 300px}
+        #content{width: 300px; display: none}
+    </style>
+    <script>
+        $(document).ready(function () {
+            $("#wrap .img").click(function () {
+                // $("#content").slideDown('slow');
+                // $("#content").slideDown('slow', function () { // 回调
+                //     $("#wrap .img").fadeOut('slow', function () {
+                //         $(this).attr("src", "../Images/8.png").fadeIn('slow');
+                //         $("#content p").css('color', 'red');
+                //     });
+                // })
+                $("#content").slideToggle('slow', function () {
+                    $(".img").fadeOut('slow', function () {
+                        if ($(this).attr("src") === "../Images/9.png") {
+                            $(".img").attr("src", "../Images/8.png").fadeIn("slow");
+                        }
+                        else {
+                            $(".img").attr("src", "../Images/9.png").fadeIn("slow");
+                        }
+                    });
+                });
+            });
+        });
+    </script>
+</head>
+<body>
+
+<div id="wrap">
+    <div id="content">
+        <h3>姓名:赵丽颖</h3>
+        <p>生日：天知道</p>
+        <p>简介:xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+        ddddddddddddddddddddddddddddddddddddddddd
+        ffffffffffffffffffffffffffffffffffffffff
+        eeeeeeeeeeeeeeeeeeeeeeeeee</p>
+    </div>
+    <img src="../Images/9.png" alt="" class="img">
+</div>
+
+</body>
+</html>

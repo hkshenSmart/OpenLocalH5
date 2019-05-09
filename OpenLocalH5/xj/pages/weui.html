@@ -1,0 +1,603 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <!--<meta http-equiv="X-UA-Compatible" content="ie=edge">-->
+    <script src="../js/jq.js"></script>
+    <link rel="stylesheet" href="../css/weui.css">
+    <title>Document</title>
+
+    <script>
+        $(document).ready(function () {
+            var progress = 0;
+            var pg = $(".weui-progress__inner-bar");
+            function unploading() {
+                pg.width(++progress % 100 + "%");
+                setTimeout(unploading, 20);
+            }
+            setTimeout(unploading, 20);
+
+            $(".weui-tabbar__item").click(function () {
+                var all = $(".weui-tabbar__item");
+                var page = $(".pageIndex");
+                var aIndex = $(".weui-tabbar__item").index(this);
+                console.log("aaaaaa:" + aIndex);
+                console.log("11111:" + page.length);
+                for (let i = 0; i < all.length; i++) {
+                    all[i].setAttribute("class", "weui-tabbar__item");
+                    page[i].style.display = "none";
+                    if (i === aIndex) {
+                        page[i].style.display = "block";
+                    }
+                }
+                // cssText="border-collapse:collapse;border-spacing:1;border:1 solid #0B2565;background-color:white;color:black;"
+                //page[0].style.background = "gray";
+                //console.log(page[0]);
+                // getSetAttribute是设置class
+                $(this).attr("class", "weui-tabbar__item weui-bar__item_on");
+                console.log("第:"+aIndex);
+            });
+        });
+    </script>
+</head>
+<body>
+
+<span class="weui-badge">New</span>
+天下<span class="weui-badge weui-badge_dot"></span>
+
+<a href="javascript:;" class="weui-btn weui-btn_primary" id="firstBtn">页面主操作 Normal</a>
+<a href="javascript:;" class="weui-btn weui-btn_disabled weui-btn_primary">页面主操作 Disabled</a>
+<a href="javascript:;" class="weui-btn weui-btn_default">页面次要操作 Normal</a>
+<a href="javascript:;" class="weui-btn weui-btn_disabled weui-btn_default">页面次要操作 Disabled</a>
+<a href="javascript:;" class="weui-btn weui-btn_warn">警告类操作 Normal</a>
+<a href="javascript:;" class="weui-btn weui-btn_disabled weui-btn_warn">警告类操作 Disabled</a>
+
+
+<div class="weui-cells__title">带说明的列表项</div>
+<div class="weui-cells">
+    <div class="weui-cell">
+        <div class="weui-cell__bd">
+            <p>标题文字</p>
+        </div>
+        <div class="weui-cell__ft">说明文字</div>
+    </div>
+</div>
+
+<div class="weui-cells__title">带图标、说明的列表项</div>
+<div class="weui-cells">
+    <div class="weui-cell">
+        <div class="weui-cell__hd"><img src="../Images/3.png" alt="" style="width:20px;margin-right:5px;display:block"></div>
+        <div class="weui-cell__bd">
+            <p>标题文字</p>
+        </div>
+        <div class="weui-cell__ft">说明文字</div>
+    </div>
+    <div class="weui-cell">
+        <div class="weui-cell__hd"><img src="../Images/2.png" alt="" style="width:20px;margin-right:5px;display:block"></div>
+        <div class="weui-cell__bd">
+            <p>标题文字</p>
+        </div>
+        <div class="weui-cell__ft">说明文字</div>
+    </div>
+</div>
+
+<div class="weui-cells__title">带跳转的列表项</div>
+<div class="weui-cells">
+    <a class="weui-cell weui-cell_access" href="demo10.html">
+        <div class="weui-cell__bd">
+            <p>cell standard</p>
+        </div>
+        <div class="weui-cell__ft">
+        </div>
+    </a>
+    <a class="weui-cell weui-cell_access" href="javascript:;">
+        <div class="weui-cell__bd">
+            <p>cell standard</p>
+        </div>
+        <div class="weui-cell__ft">
+        </div>
+    </a>
+</div>
+
+<div class="weui-cells__title">带说明、跳转的列表项</div>
+<div class="weui-cells">
+    <a class="weui-cell weui-cell_access" href="javascript:;">
+        <div class="weui-cell__bd">
+            <p>cell standard</p>
+        </div>
+        <div class="weui-cell__ft">说明文字</div>
+    </a>
+    <a class="weui-cell weui-cell_access" href="javascript:;">
+        <div class="weui-cell__bd">
+            <p>cell standard</p>
+        </div>
+        <div class="weui-cell__ft">说明文字</div>
+    </a>
+
+</div>
+
+<div class="weui-cells__title"><h6>添加信息</h6>带图标、说明、跳转的列表项</div>
+<div class="weui-cells">
+
+    <a class="weui-cell weui-cell_access" href="javascript:;">
+        <div class="weui-cell__hd"><img src="../Images/4.png" alt="" style="width:20px;margin-right:5px;display:block"></div>
+        <div class="weui-cell__bd">
+            <p>cell standard</p>
+        </div>
+        <div class="weui-cell__ft">说明文字</div>
+    </a>
+    <a class="weui-cell weui-cell_access" href="javascript:;">
+        <div class="weui-cell__hd"><img src="../Images/6.png" alt="" style="width:20px;margin-right:5px;display:block"></div>
+        <div class="weui-cell__bd" style="background: blue">
+            <p>cell standard</p>
+        </div>
+        <div class="weui-cell__ft" style="background: red;">说明文字a</div>
+    </a>
+</div>
+
+
+<div id="dialog1" style="display: none">
+    <div class="weui-mask"></div>
+    <div class="weui-dialog">
+        <div class="weui-dialog__hd"><strong class="weui-dialog__title">弹窗标题</strong></div>
+        <div class="weui-dialog__bd">弹窗内容，告知当前状态、信息和解决方法，描述文字尽量控制在三行内</div>
+        <div class="weui-dialog__ft">
+            <a href="javascript:;" class="weui-dialog__btn weui-dialog__btn_default">辅助操作</a>
+            <a href="javascript:;" class="weui-dialog__btn weui-dialog__btn_primary">主操作</a>
+        </div>
+    </div>
+</div>
+
+<p>-----------------------------------</p>
+<div class="weui-flex">
+    <div class="weui-flex__item"><div class="placeholder">weui1</div></div>
+</div>
+<div class="weui-flex">
+    <div class="weui-flex__item"><div class="placeholder">weui2</div></div>
+    <div class="weui-flex__item"><div class="placeholder">weui3</div></div>
+</div>
+<div class="weui-flex">
+    <div class="weui-flex__item"><div class="placeholder">weui4</div></div>
+    <div class="weui-flex__item"><div class="placeholder">weui5</div></div>
+    <div class="weui-flex__item"><div class="placeholder">weui6</div></div>
+</div>
+<div class="weui-flex" style="flex-flow: row wrap">
+    <div class="weui-flex__item"><div class="placeholder" style="background: red">weui7</div></div>
+    <div class="weui-flex__item"><div class="placeholder" style="width: 200px">weui8</div></div>
+    <div class="weui-flex__item"><div class="placeholder" style="width: 200px">weui9</div></div>
+    <div class="weui-flex__item"><div class="placeholder" style="width: 200px">weui10</div></div>
+    <div class="weui-flex__item"><div class="placeholder" style="width: 200px">weui10</div></div>
+    <div class="weui-flex__item"><div class="placeholder" style="width: 200px">weui10</div></div>
+    <div class="weui-flex__item"><div class="placeholder" style="width: 200px">weui10</div></div>
+    <div class="weui-flex__item"><div class="placeholder" style="width: 200px">weui10</div></div>
+    <div class="weui-flex__item"><div class="placeholder" style="width: 200px">weui10</div></div>
+    <div class="weui-flex__item"><div class="placeholder" style="width: 200px">weui10</div></div>
+    <div class="weui-flex__item"><div class="placeholder" style="width: 200px">weui10</div></div>
+    <div class="weui-flex__item"><div class="placeholder" style="width: 200px">weui10</div></div>
+    <div class="weui-flex__item"><div class="placeholder" style="width: 200px">weui10</div></div>
+    <div class="weui-flex__item"><div class="placeholder" style="width: 200px">weui10</div></div>
+    <div class="weui-flex__item"><div class="placeholder" style="width: 200px">weui10</div></div>
+
+</div>
+
+<p>-------------------------</p>
+
+<!--<div class="weui-footer">-->
+    <!--<p class="weui-footer__text">Copyright &copy; 2008-2016 weui.io</p>-->
+<!--</div>-->
+<!--<div class="weui-footer">-->
+    <!--<p class="weui-footer__links">-->
+        <!--<a href="javascript:void(0);" class="weui-footer__link">底部链接</a>-->
+    <!--</p>-->
+    <!--<p class="weui-footer__text">Copyright &copy; 2008-2016 weui.io</p>-->
+<!--</div>-->
+<!--<div class="weui-footer">-->
+    <!--<p class="weui-footer__links">-->
+        <!--<a href="javascript:void(0);" class="weui-footer__link">底部链接</a>-->
+        <!--<a href="javascript:void(0);" class="weui-footer__link">底部链接</a>-->
+    <!--</p>-->
+    <!--<p class="weui-footer__text">Copyright &copy; 2008-2016 weui.io</p>-->
+<!--</div>-->
+<!--<div class="weui-footer weui-footer_fixed-bottom">-->
+    <!--<p class="weui-footer__links">-->
+        <!--<a href="javascript:home();" class="weui-footer__link">WeUI首页</a>-->
+    <!--</p>-->
+    <!--<p class="weui-footer__text">Copyright &copy; 2008-2016 weui.io</p>-->
+<!--</div>-->
+
+<p>-----------无内容-----------</p>
+
+<div class="weui-gallery">
+    <span class="weui-gallery__img" style="background-image: url(../Images/7.png);">天下</span>
+    <div class="weui-gallery__opr">
+        <a href="javascript:" class="weui-gallery__del">
+            <i class="weui-icon-delete weui-icon_gallery-delete"></i>
+        </a>
+    </div>
+</div>
+
+<p>-------------------------</p>
+
+<div class="weui-grids">
+    <a href="javascript:;" class="weui-grid">
+        <div class="weui-grid__icon">
+            <img src="../Images/3.png" alt="">
+        </div>
+        <p class="weui-grid__label">
+            第一个
+        </p>
+    </a>
+    <a href="javascript:;" class="weui-grid">
+        <div class="weui-grid__icon">
+            <img src="../Images/2.png" alt="">
+        </div>
+        <p class="weui-grid__label">
+            第二个
+        </p>
+    </a>
+    <a href="javascript:;" class="weui-grid">
+        <div class="weui-grid__icon">
+            <img src="../Images/2.png" alt="">
+        </div>
+        <p class="weui-grid__label">
+            第三个
+        </p>
+    </a>
+</div>
+
+<p>-----------------------</p>
+
+<div class="weui-loadmore">
+    <i class="weui-loading"></i>
+    <span class="weui-loadmore__tips">正在加载</span>
+</div>
+<div class="weui-loadmore weui-loadmore_line">
+    <span class="weui-loadmore__tips">暂无数据</span>
+</div>
+<div class="weui-loadmore weui-loadmore_line weui-loadmore_dot">
+    <span class="weui-loadmore__tips"></span>
+</div>
+
+
+<p>----------------------</p>
+<div class="weui-cells__title" style="background: red">单选列表项</div>
+<div class="weui-cells weui-cells_radio">
+    <label class="weui-cell weui-check__label" for="x11">
+        <div class="weui-cell__bd">
+            <p>cell standard</p>
+        </div>
+        <div class="weui-cell__ft">
+            <input type="radio" class="weui-check" name="radio1" id="x11">
+            <span class="weui-icon-checked"></span>
+        </div>
+    </label>
+    <label class="weui-cell weui-check__label" for="x12">
+
+        <div class="weui-cell__bd">
+            <p>cell standard</p>
+        </div>
+        <div class="weui-cell__ft">
+            <input type="radio" name="radio1" class="weui-check" id="x12" checked="checked">
+            <span class="weui-icon-checked"></span>
+        </div>
+    </label>
+    <a href="javascript:void(0);" class="weui-cell weui-cell_link">
+        <div class="weui-cell__bd">添加更多</div>
+    </a>
+</div>
+
+<div class="weui-cells__title" style="background: red">复选列表项</div>
+<div class="weui-cells weui-cells_checkbox">
+    <label class="weui-cell weui-check__label" for="s11">
+        <div class="weui-cell__hd">
+            <input type="checkbox" class="weui-check" name="checkbox1" id="s11" checked="checked">
+            <i class="weui-icon-checked"></i>
+        </div>
+        <div class="weui-cell__bd">
+            <p>standard is dealt for u.</p>
+        </div>
+    </label>
+    <label class="weui-cell weui-check__label" for="s12">
+        <div class="weui-cell__hd">
+            <input type="checkbox" name="checkbox1" class="weui-check" id="s12">
+            <i class="weui-icon-checked"></i>
+        </div>
+        <div class="weui-cell__bd">
+            <p>standard is dealicient for u.</p>
+        </div>
+    </label>
+    <a href="javascript:void(0);" class="weui-cell weui-cell_link">
+        <div class="weui-cell__bd">添加更多</div>
+    </a>
+</div>
+
+<div class="weui-cells__title" style="background: red">表单</div>
+<div class="weui-cells weui-cells_form">
+    <div class="weui-cell">
+        <div class="weui-cell__hd"><label class="weui-label">qq</label></div>
+        <div class="weui-cell__bd">
+            <input class="weui-input" type="number" pattern="[0-9]*" placeholder="请输入qq号"/>
+        </div>
+    </div>
+    <div class="weui-cell weui-cell_vcode">
+        <div class="weui-cell__hd">
+            <label class="weui-label">手机号</label>
+        </div>
+        <div class="weui-cell__bd">
+            <input class="weui-input" type="tel" placeholder="请输入手机号">
+        </div>
+        <div class="weui-cell__ft">
+            <a href="javascript:;" class="weui-vcode-btn">获取验证码</a>
+        </div>
+    </div>
+    <div class="weui-cell">
+        <div class="weui-cell__hd"><label for="" class="weui-label">日期</label></div>
+        <div class="weui-cell__bd">
+            <input class="weui-input" type="date" value=""/>
+        </div>
+    </div>
+    <div class="weui-cell">
+        <div class="weui-cell__hd"><label for="" class="weui-label">时间</label></div>
+        <div class="weui-cell__bd">
+            <input class="weui-input" type="datetime-local" value="" placeholder=""/>
+        </div>
+    </div>
+    <div class="weui-cell weui-cell_vcode">
+        <div class="weui-cell__hd"><label class="weui-label">验证码</label></div>
+        <div class="weui-cell__bd">
+            <input class="weui-input" type="number" placeholder="请输入验证码"/>
+        </div>
+        <div class="weui-cell__ft">
+            <img class="weui-vcode-img" src="./images/vcode.jpg" />
+        </div>
+    </div>
+</div>
+<div class="weui-cells__tips">底部说明文字底部说明文字</div>
+
+<div class="weui-cells__title" style="background: red">表单报错</div>
+<div class="weui-cells weui-cells_form">
+    <div class="weui-cell weui-cell_warn">
+        <div class="weui-cell__hd"><label for="" class="weui-label">卡号</label></div>
+        <div class="weui-cell__bd">
+            <input class="weui-input" type="number" pattern="[0-9]*" value="weui input error" placeholder="请输入卡号"/>
+        </div>
+        <div class="weui-cell__ft">
+            <i class="weui-icon-warn"></i>
+        </div>
+    </div>
+</div>
+
+
+<div class="weui-cells__title" style="background: red">开关</div>
+<div class="weui-cells weui-cells_form">
+    <div class="weui-cell weui-cell_switch">
+        <div class="weui-cell__bd">标题文字</div>
+        <div class="weui-cell__ft">
+            <input class="weui-switch" type="checkbox"/>
+        </div>
+    </div>
+</div>
+
+<div class="weui-cells__title" style="background: red">文本框</div>
+<div class="weui-cells">
+    <div class="weui-cell">
+        <div class="weui-cell__bd">
+            <input class="weui-input" type="text" placeholder="请输入文本"/>
+        </div>
+    </div>
+</div>
+
+<div class="weui-cells__title" style="background: red">文本域</div>
+<div class="weui-cells weui-cells_form">
+    <div class="weui-cell">
+        <div class="weui-cell__bd">
+            <textarea class="weui-textarea" placeholder="请输入文本" rows="3"></textarea>
+            <div class="weui-textarea-counter"><span>0</span>/200</div>
+        </div>
+    </div>
+</div>
+
+<div class="weui-cells__title" style="background: red">选择</div>
+<div class="weui-cells">
+
+    <div class="weui-cell weui-cell_select weui-cell_select-before">
+        <div class="weui-cell__hd">
+            <select class="weui-select" name="select2">
+                <option value="1">+86</option>
+                <option value="2">+80</option>
+                <option value="3">+84</option>
+                <option value="4">+87</option>
+            </select>
+        </div>
+        <div class="weui-cell__bd">
+            <input class="weui-input" type="number" pattern="[0-9]*" placeholder="请输入号码"/>
+        </div>
+    </div>
+</div>
+
+<div class="weui-cells__title" style="background: red">选择</div>
+<div class="weui-cells">
+    <div class="weui-cell weui-cell_select">
+        <div class="weui-cell__bd">
+            <select class="weui-select" name="select1">
+                <option selected="" value="1">微信号</option>
+                <option value="2">QQ号</option>
+                <option value="3">Email</option>
+            </select>
+        </div>
+    </div>
+    <div class="weui-cell weui-cell_select weui-cell_select-after">
+        <div class="weui-cell__hd">
+            <label for="" class="weui-label">国家/地区</label>
+        </div>
+        <div class="weui-cell__bd">
+            <select class="weui-select" name="select2">
+                <option value="1">中国</option>
+                <option value="2">美国</option>
+                <option value="3">英国</option>
+            </select>
+        </div>
+    </div>
+</div>
+
+<label for="weuiAgree" class="weui-agree">
+    <input id="weuiAgree" type="checkbox" class="weui-agree__checkbox">
+    <span class="weui-agree__text">
+        阅读并同意<a href="javascript:void(0);">《相关条款》</a>
+    </span>
+</label>
+
+<div class="weui-btn-area">
+    <a class="weui-btn weui-btn_primary" href="javascript:" id="showTooltips">确定</a>
+</div>
+
+<p>------------------------------</p>
+
+<div class="weui-tab">
+    <div class="weui-navbar">
+        <div class="weui-navbar__item">
+            选项一
+        </div>
+        <div class="weui-navbar__item">
+            选项二
+        </div>
+        <div class="weui-navbar__item weui-bar__item_on">
+            选项三
+        </div>
+    </div>
+    <div class="weui-tab__panel">
+        <div style="display:none">Page 1</div>
+        <div style="display:none">Page 2</div>
+        <div>Page 3</div>
+    </div>
+</div>
+
+<p>--------------------</p>
+
+<div class="weui-form-preview">
+    <div class="weui-form-preview__hd">
+        <label class="weui-form-preview__label">付款金额</label>
+        <em class="weui-form-preview__value">¥2400.00</em>
+    </div>
+    <div class="weui-form-preview__bd">
+        <p>
+            <label class="weui-form-preview__label">商品</label>
+            <span class="weui-form-preview__value">电动打蛋机</span>
+        </p>
+        <p>
+            <label class="weui-form-preview__label">标题标题</label>
+            <span class="weui-form-preview__value">名字名字名字</span>
+        </p>
+        <p>
+            <label class="weui-form-preview__label">标题标题</label>
+            <span class="weui-form-preview__value">很长很长的名字很长很长的名字很长很长的名字很长很长的名字很长很长的名字</span>
+        </p>
+    </div>
+    <div class="weui-form-preview__ft">
+        <a class="weui-form-preview__btn weui-form-preview__btn_primary" href="javascript:">操作</a>
+    </div>
+</div>
+
+<p>--------------------</p>
+
+<div class="weui-progress">
+    <div class="weui-progress__bar">
+        <div class="weui-progress__inner-bar js_progress" style="width: 0%;"></div>
+    </div>
+    <a href="javascript:;" class="weui-progress__opr">
+        <i class="weui-icon-cancel"></i>
+    </a>
+</div>
+<br>
+<div class="weui-progress">
+    <div class="weui-progress__bar">
+        <div class="weui-progress__inner-bar js_progress" style="width: 50%;"></div>
+    </div>
+    <a href="javascript:;" class="weui-progress__opr">
+        <i class="weui-icon-cancel"></i>
+    </a>
+</div>
+<br>
+<div class="weui-progress">
+    <div class="weui-progress__bar">
+        <div class="weui-progress__inner-bar js_progress" style="width: 80%;"></div>
+    </div>
+    <a href="javascript:;" class="weui-progress__opr">
+        <i class="weui-icon-cancel"></i>
+    </a>
+</div>
+<div class="weui-btn-area">
+    <a href="javascript:;" class="weui-btn weui-btn_primary" id="btnStartProgress">上传</a>
+</div>
+
+<p>---------------------------------------------</p>
+<div class="weui-search-bar" id="search_bar">
+    <form class="weui-search-bar__form">
+        <div class="weui-search-bar__box">
+            <i class="weui-icon-search"></i>
+            <input type="search" class="weui-search-bar__input" id="search_input" placeholder="搜索" />
+            <a href="javascript:" class="weui-icon-clear" id="search_clear"></a>
+        </div>
+        <label for="search_input" class="weui-search-bar__label" id="search_text">
+            <i class="weui-icon-search"></i>
+            <span>搜索</span>
+        </label>
+    </form>
+    <a href="javascript:" class="weui-search-bar__cancel-btn" id="search_cancel">取消</a>
+</div>
+<div class="weui-cells weui-cells_access search_show" id="search_show">
+    <div class="weui-cell">
+        <div class="weui-cell__bd weui-cell_primary">
+            <p>实时搜索文本</p>
+        </div>
+    </div>
+    <div class="weui-cell">
+        <div class="weui-cell__bd weui-cell_primary">
+            <p>实时搜索文本</p>
+        </div>
+    </div>
+    <div class="weui-cell">
+        <div class="weui-cell__bd weui-cell_primary">
+            <p>实时搜索文本</p>
+        </div>
+    </div>
+    <div class="weui-cell">
+        <div class="weui-cell__bd weui-cell_primary">
+            <p>实时搜索文本</p>
+        </div>
+    </div>
+</div>
+
+<p>---------------------------------</p>
+
+<div class="weui-tab">
+    <div class="weui-tabbar">
+        <a href="javascript:;" class="weui-tabbar__item weui-bar__item_on">
+            <img src="../Images/3.png" alt="" class="weui-tabbar__icon">
+            <p class="weui-tabbar__label">微信</p>
+        </a>
+        <a href="javascript:;" class="weui-tabbar__item">
+            <img src="../Images/4.png" alt="" class="weui-tabbar__icon">
+            <p class="weui-tabbar__label">通讯录</p>
+        </a>
+        <a href="javascript:;" class="weui-tabbar__item">
+            <img src="../Images/5.png" alt="" class="weui-tabbar__icon">
+            <p class="weui-tabbar__label">发现</p>
+        </a>
+        <a href="javascript:;" class="weui-tabbar__item">
+            <img src="../Images/6.png" alt="" class="weui-tabbar__icon">
+            <p class="weui-tabbar__label">我</p>
+        </a>
+    </div>
+    <div class="weui-tab__panel">
+        <div class="pageIndex" style="background: red; width: 100%; height: 300px;">Page 1</div>
+        <div class="pageIndex" style="display:none; background: blue; width: 100%; height: 300px;">Page 2</div>
+        <div class="pageIndex" style="display:none; background: green; width: 100%; height: 300px;">Page 3</div>
+        <div class="pageIndex" style="display:none; background: green; width: 100%; height: 300px;">Page 4</div>
+    </div>
+</div>
+
+</body>
+</html>

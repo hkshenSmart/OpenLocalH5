@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+
+<!--这是View-->
+<div id="box_div">
+    <!--<p>{{messagedata}}</p>-->
+    <!--<input type="text" v-model="messagedata">-->
+    <h1>你好</h1>
+    <h1 v-if="yes">走了yes</h1>
+    <h1 v-if="no">走了no</h1>
+    <h1 v-if="age >= 25">年龄:{{age}}</h1>
+    <h1 v-if="name.indexOf('hkshen') >= 0">名字:{{name}}</h1>
+
+    <div>
+        <my-header></my-header>
+    </div>
+</div>
+
+</body>
+<script src="https://cdn.jsdelivr.net/npm/vue"></script>
+<script>
+    <!--这是model-->
+    var eData = {
+        messagedata: "hello vue world."
+    }
+
+    // 创建一个Vue实例 或者叫做ViewModel
+    // 它连接View与Model
+    // new Vue({
+    //     el: "#box_div",
+    //     data: eData
+    // });
+    Vue.component('my-header', {
+        template: '<p>这是我的头部组件</p>'
+    })
+
+    var ifVM = new Vue({
+        el: "#box_div",
+        data: {
+            yes: false,
+            no: true,
+            age: 33,
+            name: "hkshen"
+        }
+    })
+</script>
+
+</html>

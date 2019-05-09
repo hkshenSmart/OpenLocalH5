@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebServers">
+    <option name="servers">
+      <webServer id="f1107bcb-aa8a-4905-a103-a8fa7f2fcbad" name="hkshen" url="http://192.168.3.191:8082/xj/pages">
+        <fileTransfer port="0" mountedRoot="$PROJECT_DIR$/pages" accessType="MOUNT" />
+      </webServer>
+    </option>
+  </component>
+</project>

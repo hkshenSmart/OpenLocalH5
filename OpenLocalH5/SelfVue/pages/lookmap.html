@@ -1,0 +1,139 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>地图</title>
+    <link rel="stylesheet" href="../css/WeUI/weui.css">
+    <link rel="stylesheet" href="../css/jQueryWeUI/jquery-weui.min.css">
+    <script src="../js/jQuery/jq.js"></script>
+    <!--AmazeUI-->
+    <script src="../js/AmazeUI/amazeui.js"></script>
+    <link rel="stylesheet" href="../css/AmazeUI/amazeui.css">
+    <!--高德地图-->
+    <link rel="stylesheet" href="https://a.amap.com/jsapi_demos/static/demo-center/css/demo-center.css" />
+    <script src="https://webapi.amap.com/maps?v=1.4.13&key=4777b6221424cd867ba8dbb0997b4767"></script>
+    <!--本身-->
+    <!--<link rel="stylesheet" href="../css/chooseplace.css">-->
+    <script src="../js/lookmap.js"></script>
+    <style>
+        /*修改提示文字的颜色*/
+        input::-webkit-input-placeholder {
+            color: #C2C2C2;
+            font-size: 15px;
+            /* placeholder位置  */
+            text-align: left;
+        }
+
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        html, body{
+            width: 100%;
+            height: 100%;
+        }
+        p{
+            margin: 0 0 0 0;
+        }
+        span{
+            margin: 0 0 0 0;
+        }
+
+        /*导航条*/
+        .top_header{
+            width: 100%;
+            height: 64px;
+            /*position: fixed;*/
+            background: white;
+            border: 1px solid #eeeeee;
+
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+        }
+        .left_header{
+            width: 20%;
+            /*background: red;*/
+
+            display: flex;
+            flex-direction: row;
+            justify-content: flex-start;
+            align-items: center;
+        }
+        .back_btn{
+            width: 13.8px;
+            height: 25px;
+            background-image: url("../images/normal/zuoda.png");
+            background-size: cover;
+            margin-left: 15px;
+            border: none;
+            background-color: transparent;
+        }
+        .middle_header{
+            width: 60%;
+            /*background: blue;*/
+
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+        }
+        .top_title{
+            color: #414141;
+            font-size: 18px;
+            font-weight: bold;
+        }
+        .right_header{
+            width: 20%;
+            /*background: green;*/
+            opacity: 0;
+
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+        }
+        .right_header img{
+            width: 23px;
+            height: 20px;
+        }
+        .right_btn{
+            color: #414141;
+            font-size: 15px;
+            border: none;
+            background-color: transparent;
+        }
+
+        #map_div{
+            width: 100%;
+            height: 100%;
+        }
+    </style>
+    <script>
+    </script>
+</head>
+<body>
+<!--要在body中引入才起效-->
+<script src="../js/jQueryWeUI/jquery-weui.js"></script>
+<script src="../js/jQueryWeUI/swiper.min.js"></script>
+<script src="../js/jQueryWeUI/city-picker.min.js"></script>
+
+<header class="top_header">
+    <div class="left_header">
+        <button class="back_btn" type="button"></button>
+    </div>
+    <div class="middle_header">
+        <span class="top_title">查看地图</span>
+    </div>
+    <div class="right_header">
+        <img src="../images/mapIcon.png" alt="">
+        <button class="right_btn" type="button">xxx</button>
+    </div>
+</header>
+
+<div id="map_div"></div>
+
+</body>
+</html>

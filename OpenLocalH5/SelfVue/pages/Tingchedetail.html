@@ -1,0 +1,218 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>停车详情</title>
+
+    <style>
+        /*修改提示文字的颜色*/
+        input::-webkit-input-placeholder {
+            color: #C2C2C2;
+            font-size: 15px;
+            /* placeholder位置  */
+            text-align: left;
+        }
+
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        p{
+            margin: 0 0 0 0;
+        }
+        span{
+            margin: 0 0 0 0;
+        }
+
+        body{
+            background: #F2F2F2;
+        }
+
+        #contain_top_div{
+            width: 100%;
+            height: 55px;
+            background: white;
+
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .top_left_p{
+            font-size: 16px;
+            color: black;
+            margin-left: 10px;
+        }
+        .top_middle_p{
+            font-size: 17px;
+            color: #6693F0;
+        }
+        .top_right_p{
+            font-size: 14px;
+            color: white;
+            background: #6B96F1;
+            width: 100px;
+            height: 24px;
+            text-align: center;
+            border-radius: 5px;
+            margin-right: 10px;
+            line-height: 24px;
+        }
+
+        #contain_middle_div{
+            width: 100%;
+            height: 180px;
+            /*background: red;*/
+
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+        }
+        .middle_big_img{
+            width: 335px;
+            height: 160px;
+        }
+
+        #contain_bottom_div{
+            width: 100%;
+            height: 300px;
+            background: white;
+        }
+        .bottom_1_div{
+            width: 100%;
+            height: 55px;
+            /*background: red;*/
+            border-bottom: 1px solid #eeeeee;
+
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .cbm_1_p{
+            font-size: 16px;
+            color: #7B7B7B;
+            margin-left: 10px;
+        }
+        .cbm_2_p{
+            font-size: 15px;
+            width: 50px;
+            height: 26px;
+            margin-right: 10px;
+
+            background: #F48C36;
+            border-radius: 5px;
+            line-height: 26px;
+            text-align: center;
+        }
+
+        .bottom_2_div {
+            width: 100%;
+            height: 55px;
+            /*background: yellow;*/
+            border-bottom: 1px solid #eeeeee;
+
+            display: flex;
+            flex-direction: row;
+            justify-content: flex-start;
+            align-items: center;
+         }
+        .cbm_1_img{
+            width: 41px;
+            height: 35px;
+        }
+        .juli_p{
+            font-size: 16px;
+            color: gray;
+            margin-left: 15px;
+        }
+        .mi_p{
+            font-size: 16px;
+            color: #F48C36;
+            margin-left: 15px;
+        }
+
+        .bottom_3_div{
+            width: 100%;
+            height: 55px;
+            /*background: red;*/
+            border-bottom: 1px solid #eeeeee;
+
+            display: flex;
+            flex-direction: row;
+            justify-content: flex-start;
+            align-items: center;
+        }
+        .chewei_img{
+            width: 48px;
+            height: 40px;
+        }
+        .chewei_p{
+            font-size: 16px;
+            color: gray;
+            margin-left: 15px;
+        }
+        .cheweiNum_p{
+            font-size: 16px;
+            color: #F48C36;
+            margin-left: 15px;
+        }
+
+        .bottom_4_div{
+            width: 100%;
+            height: 55px;
+            /*background: red;*/
+            border-bottom: 1px solid #eeeeee;
+
+            display: flex;
+            flex-direction: row;
+            justify-content: flex-start;
+            align-items: center;
+        }
+        .didian_img{
+            width: 40px;
+            height: 40px;
+        }
+        .didian_p{
+            font-size: 16px;
+            color: black;
+            margin-left: 15px;
+        }
+    </style>
+</head>
+<body>
+
+<div id="contain_top_div">
+    <p class="top_left_p">1 号岗</p>
+    <p class="top_middle_p">入口</p>
+    <p class="top_right_p">无线入场</p>
+</div>
+<div id="contain_middle_div">
+    <img class="middle_big_img" src="../images/小图标/dingbudatu@2x.png" alt="">
+</div>
+<div id="contain_bottom_div">
+    <div class="bottom_1_div">
+        <p class="cbm_1_p">金阳电信大厦停车场</p>
+        <p class="cbm_2_p">导航</p>
+    </div>
+    <div class="bottom_2_div">
+        <img class="cbm_1_img" src="../images/小图标/1111.png" alt="">
+        <p class="juli_p">距离</p>
+        <p class="mi_p">641m</p>
+    </div>
+    <div class="bottom_3_div">
+        <img class="chewei_img" src="../images/小图标/2222.png" alt="">
+        <p class="chewei_p">车位</p>
+        <p class="cheweiNum_p">751/2100</p>
+    </div>
+    <div class="bottom_4_div">
+        <img class="didian_img" src="../images/小图标/3333.png" alt="">
+        <p class="didian_p">观山湖区观山东路8-7</p>
+    </div>
+</div>
+
+</body>
+</html>

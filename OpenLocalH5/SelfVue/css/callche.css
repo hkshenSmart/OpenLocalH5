@@ -1,0 +1,452 @@
+/*修改提示文字的颜色*/
+input::-webkit-input-placeholder {
+    color: #C2C2C2;
+    font-size: 15px;
+    /* placeholder位置  */
+    text-align: left;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+}
+p{
+    margin: 0 0 0 0;
+}
+span{
+    margin: 0 0 0 0;
+}
+
+/*导航条*/
+.top_header{
+    width: 100%;
+    height: 64px;
+    /*position: fixed;*/
+    background: white;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.left_header{
+    width: 20%;
+    /*background: red;*/
+
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+}
+.back_btn{
+    width: 13.8px;
+    height: 25px;
+    background-image: url("../images/normal/zuoda.png");
+    background-size: cover;
+    margin-left: 15px;
+    border: none;
+    background-color: transparent;
+}
+.middle_header{
+    width: 60%;
+    /*background: blue;*/
+
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+.top_title{
+    color: #414141;
+    font-size: 18px;
+    font-weight: bold;
+}
+.right_header{
+    width: 20%;
+    /*background: green;*/
+
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+.right_header img{
+    width: 23px;
+    height: 20px;
+}
+.right_btn{
+    color: #414141;
+    font-size: 15px;
+    border: none;
+    background-color: transparent;
+}
+
+/*列表*/
+.listBox_div{
+    width: 100%;
+    margin-bottom: 60px;
+}
+.listBox_div ul{
+    margin: 0;
+    padding: 0;
+    width: 100%;
+}
+.listBox_div ul li{
+    /*position: relative;*/
+    width: 100%;
+    height: 150px;
+    /*border-bottom: solid 1px red;*/
+    /*border-bottom-left-radius: 50px;*/
+    /*border-bottom-width: 30px;*/
+    list-style: none;
+}
+.liContain_div{
+    width: 100%;
+    height: 100%;
+    border-bottom: 1px solid #F6F6F6;
+
+    display: flex;
+    flex-direction: column;
+    /*justify-content: flex-end;*/
+}
+.top_div{
+    width: 100%;
+    flex: 1;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+}
+.top_div img{
+    width: 22px;
+    height: 20px;
+    margin-left: 15px;
+}
+.catNum_p{
+    /*贵A42766*/
+    color: #7C7F8E;
+    font-size: 17px;
+    margin-left: 5px;
+}
+
+.middle_div{
+    width: 100%;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+}
+.middle_div img{
+    width: 15px;
+    height: 41px;
+    margin-left: 15px;
+}
+.qizhong_div {
+    width: 260px;
+    height: 62px;
+    /*background: blue;*/
+    margin-left: 10px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+.qi_p{
+    /*贵阳*/
+    font-size: 17px;
+    color: #414141;
+}
+.zhong_p{
+    /*猫场*/
+    font-size: 17px;
+    color: #414141;
+}
+.bottom_div{
+    width: 100%;
+    flex: 1;
+    /*background: red;*/
+
+    display: flex;
+    flex-direction: row;
+}
+.contactdriver_div{
+    width: 50%;
+    /*background: red;*/
+
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+.contactdriver_div img{
+    width: 24px;
+    height: 20px;
+}
+.contactdriver_p{
+    color: #7C7F8E;
+    font-size: 17px;
+    margin-left: 5px;
+}
+.notidriver_div{
+    width: 50%;
+    /*background: green;*/
+
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+.notidriver_div img{
+    width: 23px;
+    height: 22px;
+}
+.contactdriver_p{
+    color: #7C7F8E;
+    font-size: 17px;
+    margin-left: 5px;
+}
+
+/*通知所有司机*/
+.notialldriver{
+    width: 100%;
+    height: 60px;
+    background: #73CA32;
+
+    position: fixed;
+    bottom: 0;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+.notialldriver img{
+    width: 23px;
+    height: 22px;
+}
+.notiall_p{
+    color: white;
+    font-size: 20px;
+    margin-left: 3px;
+}
+
+/*弹窗*/
+.topbar_div{
+    width: 100%;
+    height: 45px;
+    /*background: red;*/
+    border-bottom: 1px solid #EFEFEF;
+
+    display: flex;
+    flex-direction: row;
+}
+.topbar_title_div{
+    width: 90%;
+    /*background: #0b6fa2;*/
+
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+.topbar_title_p{
+    font-size: 19px;
+}
+
+/*上下车地点*/
+.saAddressBox_div{
+    width: 100%;
+    height: 110px;
+    /*background: red;*/
+    /*overflow-y: auto;*/
+    /*-webkit-overflow-scrolling: touch;*/
+    border-bottom: 1px solid #EFEFEF;
+
+    display: flex;
+    flex-direction: row;
+}
+.leftsa_div{
+    width: 10%;
+    /*background: grey;*/
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.top_dot{
+    width: 10px;
+    height: 10px;
+    background: #2CBB54;
+    border-radius: 5px;
+}
+.middleimg_div{
+    width: 14px;
+    height: 14px;
+    background-image: url("../images/diaotou.png");
+    background-size: cover;
+
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+.bottom_dot{
+    width: 10px;
+    height: 10px;
+    background: #F78445;
+    border-radius: 5px;
+}
+
+
+.rightsa_div{
+    width: 90%;
+    /*background: purple;*/
+
+    display: flex;
+    flex-direction: column;
+}
+.rightsa_top_div{
+    flex: 1;
+    /*background: #10a0ea;*/
+    border-bottom: 1px solid #EFEFEF;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+#upCar_p{
+    font-size: 15px;
+}
+.rightsa_top_div img{
+    width: 22px;
+    height: 21px;
+}
+.rightsa_bottom_div{
+    flex: 1;
+    /*background: mediumspringgreen;*/
+
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+}
+#downCar_p{
+    font-size: 15px;
+    color: gray;
+}
+
+/*马上出发*/
+.gonowBox_div{
+    width: 100%;
+    height: 50px;
+    /*background: yellow;*/
+    border-bottom: 1px solid #EFEFEF;
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+.leftgonow_div{
+    width: 50%;
+    height: 40px;
+    /*background: darkmagenta;*/
+    border-right: 1px solid #EFEFEF;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+.lgnow_time_img{
+    width: 18px;
+    height: 16px;
+    margin-left: 15px;
+}
+.leftgonow_div p{
+    margin-left: -30px;
+    font-size: 15px;
+}
+.lgnow_jiantou_img{
+    width: 14px;
+    height: 18px;
+    margin-right: 20px;
+}
+
+.rightgonow_div{
+    width: 50%;
+    height: 40px;
+    /*background: green;*/
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+.xiaotx_img{
+    width: 22px;
+    height: 23px;
+    margin-left: 10px;
+}
+.jianjian_btn{
+    width: 22px;
+    height: 20px;
+    background-image: url("../images/jianjian.png");
+    background-size: cover;
+    margin-left: 5px;
+    border: none;
+}
+.numBox_div{
+    width: 30%;
+    height: 23px;
+    margin-left: 5px;
+    /*border: 1px solid #C7C7C7;*/
+    border-radius: 0;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+.num_input{
+    font-size: 16px;
+}
+.num_unit{
+    font-size: 16px;
+}
+.jiajia_btn{
+    width: 23px;
+    height: 20px;
+    background-image: url("../images/jiajia.png");
+    background-size: cover;
+    margin-left: 5px;
+    border: none;
+}
+
+/*确定*/
+.searchBox_div{
+    width: 100%;
+    height: 70px;
+    /*background: red;*/
+    /*position: relative;*/
+
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+.search_btn{
+    /*position: absolute;*/
+    /*top: 20px;*/
+    /*left: 15px;*/
+    /*right: 15px;*/
+    /*bottom: 0;*/
+
+    height: 50px;
+    margin-left: 15px;
+    margin-right: 15px;
+    border-radius: 5px;
+    background: #73CB32;
+    border: none;
+
+    color: white;
+    font-size: 18px;
+}

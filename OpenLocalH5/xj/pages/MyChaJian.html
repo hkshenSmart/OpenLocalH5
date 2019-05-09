@@ -1,0 +1,157 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>我要查件</title>
+    <link rel="stylesheet" href="../css/weui.css">
+    <link rel="stylesheet" href="../css/jquery-weui.min.css">
+    <!--<link rel="stylesheet" href="https://cdn.bootcss.com/weui/1.1.3/style/weui.min.css">-->
+    <!--<link rel="stylesheet" href="https://cdn.bootcss.com/jquery-weui/1.2.1/css/jquery-weui.min.css">-->
+    <script src="../js/jq.js"></script>
+
+    <script src="../js/AmazeUI/amazeui.js"></script>
+    <link rel="stylesheet" href="../css/AmazeUI/amazeui.css">
+    <!--<link rel="stylesheet" href="http://cdn.amazeui.org/amazeui/2.7.2/js/amazeui.min.js">-->
+    <!--<link rel="stylesheet" href="http://cdn.amazeui.org/amazeui/2.7.2/js/amazeui.js">-->
+    <!--<link rel="stylesheet" href="http://cdn.amazeui.org/amazeui/2.7.2/css/amazeui.min.css">-->
+    <!--<link rel="stylesheet" href="http://cdn.amazeui.org/amazeui/2.7.2/css/amazeui.css">-->
+
+
+    <style>
+        /*修改提示文字的颜色*/
+        input::-webkit-input-placeholder {
+            color: #C2C2C2;
+            font-size: 16px;
+            /* placeholder位置  */
+            /*text-align: right;*/
+        }
+
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        body{
+            background: #EFEFF4;
+        }
+        #containBox{
+            width: 100%;
+            /*background: red;*/
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            margin-top: 10px;
+        }
+        #searchBox{
+            width: 79%;
+            height: 60px;
+            background: white;
+            border: 1px solid white;
+            border-radius: 8px;
+
+            display: flex;
+            flex-direction: row;
+            justify-content: flex-start;
+            align-items: center;
+        }
+        #scanBox{
+            width: 16%;
+            height: 60px;
+            /*background: green;*/
+
+            display: flex;
+            flex-direction: row;
+            justify-content: flex-start;
+            align-items: center;
+        }
+        .dInput{
+            width: 220px;
+            height: 30px;
+            line-height: 30px;
+            border: none;
+            font-size: 15px;
+            margin-left: 10px;
+            /*background: blue;*/
+        }
+        .sousuoImage{
+            width: 31px;
+            height: 32px;
+            margin-left: 5px;
+        }
+        .saoyisaoImage{
+            width: 34px;
+            height: 32px;
+            margin-left: 10px;
+        }
+    </style>
+    <script>
+        $(function () {
+            $("#btnBack-nouse").click(function () {
+                // 1、返回上一页,不刷新history.html
+                // window.history.go(-1);
+                // javascript:window.history.go(-1)
+                // 2、返回上一页并刷新页面
+                // avascript:location.replace(this.href);event.returnValue=false;
+                // 3、返回上一页并刷新
+                // self.location=document.referrer
+                // 4、返回上一页面刷新的是自己
+                // javascript:document.parentWindow.location.reload();
+                self.location = document.referrer;
+            });
+            $(".backPage").click(function () {
+                // 返回上一级页面
+                self.location = document.referrer;
+            });
+        })
+    </script>
+</head>
+<body>
+
+<header data-am-widget="header"
+        class="am-header am-header-default" style="background: #F7F7F8">
+    <!--左边图标-->
+    <div class="am-header-left am-header-nav">
+        <a href="#left-link" class="backPage">
+            <img class="am-header-icon-custom" src="../wuliuImages/zuoda.png" alt=""/>
+        </a>
+    </div>
+    <!--标题-->
+    <h1 class="am-header-title" style="color: black; font-size: 18px">
+        我要查件
+        <!--<img src="http://s.amazeui.org/media/i/brand/amazeui-cw.png" />-->
+    </h1>
+    <!--右边图标-->
+    <!--<div class="am-header-right am-header-nav">-->
+        <!--<a href="#right-link" class="">-->
+            <!--<img class="am-header-icon-custom" src="../wuliuImages/222.png" alt=""/>-->
+        <!--</a>-->
+    <!--</div>-->
+</header>
+
+<!--<div class="weui-search-bar" id="searchBar" style="width: 80%">-->
+    <!--<form class="weui-search-bar__form">-->
+        <!--<div class="weui-search-bar__box">-->
+            <!--<i class="weui-icon-search"></i>-->
+            <!--<input type="search" class="weui-search-bar__input" id="searchInput" placeholder="搜索" required="">-->
+            <!--<a href="javascript:" class="weui-icon-clear" id="searchClear"></a>-->
+        <!--</div>-->
+        <!--<label class="weui-search-bar__label" id="searchText">-->
+            <!--<i class="weui-icon-search"></i>-->
+            <!--<span>请输入运单号查询</span>-->
+        <!--</label>-->
+    <!--</form>-->
+    <!--<a href="javascript:" class="weui-search-bar__cancel-btn" id="searchCancel">取消</a>-->
+<!--</div>-->
+
+<div id="containBox">
+    <div id="searchBox">
+        <img src="../wuliuImages/sousuo.png" alt="" class="sousuoImage">
+        <input type="text" name="sousuo" placeholder="请输入运单号查询" class="dInput">
+    </div>
+    <!--<input type="file" accept="image/*;capture=camera">-->
+    <div id="scanBox"><img src="../wuliuImages/saoyisao.png" alt="" class="saoyisaoImage"></div>
+</div>
+
+</body>
+</html>
